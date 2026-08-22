@@ -7,7 +7,7 @@
 <meta name="description" content="Divórcio extrajudicial em cartório com orientação jurídica. Faça a pré-análise gratuita do seu caso e fale com a Elaine Cristina Advocacia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=EB+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 
 <!-- GA4 — TODO: substituir G-XXXXXXXXXX pelo Measurement ID real (ainda não existe, ver contrato) -->
@@ -18,69 +18,166 @@
   gtag('js', new Date());
   gtag('config', 'G-XXXXXXXXXX');
 </script>
-<!-- Google Ads conversion tag — TODO: substituir AW-XXXXXXXXXX quando a conta for criada -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script> -->
 
 <script>
-  // Aponta o front para a API de leads. Em produção, sobrescrever via variável de ambiente
-  // no build ou editar direto aqui após o deploy do backend.
   window.EC_API_BASE = 'https://api.advocaciaelainecristina.com.br';
 </script>
 </head>
 <body>
 
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-links">
+      <a href="tel:+5511983134086">📞 (11) 98313-4086</a>
+      <a href="mailto:elainecristinnaadv@gmail.com">✉ elainecristinnaadv@gmail.com</a>
+    </div>
+    <div class="topbar-links">
+      <span>Vila Nova Curuçá, São Paulo/SP</span>
+    </div>
+  </div>
+</div>
+
 <header class="site-header">
   <div class="container">
-    <img src="assets/logo/logo-dourado-fundo-azul.png" alt="Elaine Cristina Advocacia" style="background:transparent">
-    <a class="btn btn-gold header-cta" href="#simulador">Fazer pré-análise gratuita</a>
+    <img class="brand-logo" src="assets/logo/logo-dourado-fundo-azul.png" alt="Elaine Cristina Advocacia">
+    <nav class="main-nav">
+      <a href="#sobre">Sobre</a>
+      <a href="#areas">Áreas</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#faq">Dúvidas</a>
+    </nav>
+    <div class="header-right">
+      <div class="header-phone"><span>Fale agora</span>(11) 98313-4086</div>
+      <a class="btn btn-primary" href="#simulador">Pré-análise gratuita</a>
+    </div>
   </div>
 </header>
 
-<!-- 1. HERO -->
+<!-- HERO -->
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <p class="eyebrow" style="color:#cdd7e5">Divórcio Extrajudicial</p>
+      <p class="eyebrow">Divórcio Extrajudicial</p>
       <h1>Divórcio consensual: descubra se o seu pode ser feito em cartório</h1>
       <p class="lead">Orientação jurídica para casais que já estão de acordo e querem formalizar o divórcio com segurança — em cartório, quando o caso preenche os requisitos legais.</p>
       <div class="btn-row">
-        <a class="btn btn-gold" href="#simulador">Fazer pré-análise gratuita</a>
-        <a class="btn btn-secondary" style="color:#fff;border-color:#fff" data-wa-cta data-wa-source="hero">Falar com a Elaine Cristina Advocacia</a>
+        <a class="btn btn-primary" href="#simulador">Fazer pré-análise gratuita</a>
+        <a class="btn btn-outline" data-wa-cta data-wa-source="hero">Falar com a Elaine Cristina Advocacia</a>
       </div>
-      <p class="microcopy" style="color:#cdd7e5">Leva menos de 2 minutos. A pré-análise é inicial e não substitui a orientação jurídica individualizada.</p>
+      <p class="microcopy" style="color:#c3ceE0">Leva menos de 2 minutos. A pré-análise é inicial e não substitui a orientação jurídica individualizada.</p>
     </div>
     <div class="hero-visual">
-      [Imagem: casal adulto conversando em ambiente sofisticado e tranquilo, documentos sobre a mesa, luz natural — substituir por foto real/banco de imagens alinhado à direção visual em identidade-visual.md]
+      [Imagem: casal adulto conversando em ambiente sofisticado e tranquilo, documentos sobre a mesa, luz natural — substituir por foto real alinhada à direção visual em identidade-visual.md]
     </div>
   </div>
 </section>
 
-<!-- 2. Identificação -->
+<!-- BADGES (diferenciais, sobrepõem o hero) -->
+<div class="badges-row">
+  <div class="container badges-grid">
+    <div class="badge-card">
+      <div class="icon">◆</div>
+      <div><h3>Atendimento Individualizado</h3><p>Cada situação familiar tem suas próprias particularidades.</p></div>
+    </div>
+    <div class="badge-card">
+      <div class="icon">✓</div>
+      <div><h3>Pré-Análise Gratuita</h3><p>Descubra em minutos os pontos que precisam ser verificados no seu caso.</p></div>
+    </div>
+    <div class="badge-card">
+      <div class="icon">⚖</div>
+      <div><h3>Orientação Atualizada</h3><p>Inclusive sobre mudanças recentes do CNJ, como a de 2024 sobre filhos menores.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="container about-grid">
+    <div class="about-photo-wrap">
+      <div class="about-photo">Foto da<br>Dra. Elaine Cristina<br>(em breve)</div>
+      <div class="about-oab-badge"><strong>OAB/SP</strong><span>215.743</span></div>
+    </div>
+    <div>
+      <p class="eyebrow">Sobre a advogada</p>
+      <h2>Orientação jurídica para uma decisão importante</h2>
+      <p>Advogada inscrita na OAB/SP sob o nº 215.743, com atuação em Direito de Família. Atendimento individualizado, com análise cuidadosa de cada caso antes de qualquer orientação, no escritório em Vila Nova Curuçá, São Paulo/SP.</p>
+      <div class="about-highlights">
+        <div class="about-highlight">
+          <span class="num">01</span>
+          <div><h4>Atendimento individualizado</h4><p>Sem modelo pronto — cada caso é analisado por conta própria.</p></div>
+        </div>
+        <div class="about-highlight">
+          <span class="num">02</span>
+          <div><h4>Conformidade jurídica</h4><p>Atuação alinhada às normas mais recentes do CNJ e da OAB.</p></div>
+        </div>
+      </div>
+      <p class="about-signature">Dra. Elaine Cristina</p>
+    </div>
+  </div>
+</section>
+
+<!-- ÁREAS DE ATUAÇÃO -->
+<section class="alt" id="areas">
+  <div class="container">
+    <div class="section-title center">
+      <p class="eyebrow">Áreas de atuação</p>
+      <h2>Como podemos te ajudar</h2>
+      <p>Atuação inicial concentrada em três frentes, com foco em atos extrajudiciais e orientação previdenciária.</p>
+    </div>
+    <div class="cards-grid cols-3">
+      <div class="card">
+        <div class="icon">⚖</div>
+        <h3>Divórcio Extrajudicial</h3>
+        <p>Divórcios consensuais realizados em cartório, quando preenchidos os requisitos legais, com orientação jurídica completa.</p>
+        <a class="read-more" href="#simulador">Fazer pré-análise →</a>
+      </div>
+      <div class="card">
+        <div class="icon">📄</div>
+        <h3>Inventário Extrajudicial</h3>
+        <p>Inventários amigáveis e consensuais realizados em cartório, quando juridicamente possível.</p>
+        <a class="read-more" data-wa-cta data-wa-source="card_inventario">Falar com a advocacia →</a>
+      </div>
+      <div class="card">
+        <div class="icon">🏛</div>
+        <h3>Direito Previdenciário / INSS</h3>
+        <p>Aposentadorias, planejamento e análise previdenciária, aposentadoria especial e questões de benefícios.</p>
+        <a class="read-more" data-wa-cta data-wa-source="card_previdenciario">Falar com a advocacia →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA (timeline escura) -->
+<section class="process-section" id="como-funciona">
+  <div class="container">
+    <div class="section-title center">
+      <p class="eyebrow" style="color:var(--ec-gold-light)">Passo a passo</p>
+      <h2>Como funciona o divórcio extrajudicial</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step"><div class="num">01</div><h4>Conversa inicial</h4><p>A Dra. Elaine entende a situação do casal e verifica os requisitos aplicáveis ao caso.</p></div>
+      <div class="process-step"><div class="num">02</div><h4>Definição dos termos</h4><p>Bens, eventual pensão entre os cônjuges, nome e demais pontos que precisam constar do acordo.</p></div>
+      <div class="process-step"><div class="num">03</div><h4>Preparação da documentação</h4><p>Organização de tudo o que é necessário para dar entrada no procedimento.</p></div>
+      <div class="process-step"><div class="num">04</div><h4>Escritura em cartório</h4><p>Com os requisitos e a documentação prontos, o divórcio é formalizado por escritura pública no Tabelionato de Notas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<div class="trust-strip">
+  <div class="container trust-grid">
+    <div class="trust-badge"><span class="dot"></span> OAB/SP 215.743</div>
+    <div class="trust-badge"><span class="dot"></span> Conformidade com o Provimento 205/2021 (OAB)</div>
+    <div class="trust-badge"><span class="dot"></span> Tratamento de dados conforme a LGPD</div>
+    <div class="trust-badge"><span class="dot"></span> Atendimento presencial e online</div>
+  </div>
+</div>
+
+<!-- Seu caso pode ser feito em cartório + checklist -->
 <section>
   <div class="container">
     <div class="section-title">
-      <h2>Vocês já estão de acordo. Falta só saber como formalizar.</h2>
-    </div>
-    <p style="max-width:70ch">Quando o casal está de acordo sobre o divórcio — e sobre os demais pontos que precisam ser resolvidos —, a lei permite, quando os requisitos são atendidos, formalizar tudo por escritura pública em cartório, com a assistência de um advogado. Sem processo judicial.</p>
-    <div class="callout">O CNJ confirma que o divórcio consensual pode ser feito por escritura pública quando os requisitos legais estão presentes, com assistência de advogado obrigatória. <em>(Fonte: Conselho Nacional de Justiça)</em></div>
-  </div>
-</section>
-
-<!-- 3. O que é -->
-<section class="alt">
-  <div class="container">
-    <div class="section-title">
-      <h2>O que é, na prática, o divórcio extrajudicial?</h2>
-    </div>
-    <p style="max-width:70ch">É o divórcio formalizado em cartório, por escritura pública, sem passar por um processo judicial — desde que a situação do casal esteja dentro dos requisitos legais. O advogado participa de toda a orientação e da elaboração dos termos do acordo; não é uma formalidade, é acompanhamento jurídico de verdade.</p>
-    <div class="box-highlight">Consenso + requisitos legais + orientação de advogado + cartório</div>
-  </div>
-</section>
-
-<!-- 4. Seu caso pode ser feito em cartório -->
-<section>
-  <div class="container">
-    <div class="section-title">
+      <p class="eyebrow">Antes de começar</p>
       <h2>Seu divórcio pode ser feito em cartório?</h2>
       <p>Isso depende das características do caso — por isso vale verificar antes de decidir por onde começar.</p>
     </div>
@@ -94,14 +191,27 @@
       <li>Há gravidez em curso?</li>
       <li>Outros requisitos específicos do caso</li>
     </ul>
-    <div class="callout">Muita página antiga ainda diz "se tem filho menor, não pode fazer em cartório". Isso está desatualizado: desde 2024, o CNJ passou a admitir determinadas hipóteses de divórcio extrajudicial mesmo com filhos menores ou incapazes, quando as questões de guarda, convivência e alimentos já foram resolvidas judicialmente. Por isso, a resposta certa é sempre "depende do seu caso".</div>
+    <div class="callout">Muita página antiga ainda diz "se tem filho menor, não pode fazer em cartório". Isso está desatualizado: desde 2024, o CNJ passou a admitir determinadas hipóteses de divórcio extrajudicial mesmo com filhos menores ou incapazes, quando as questões de guarda, convivência e alimentos já foram resolvidas judicialmente.</div>
   </div>
 </section>
 
-<!-- 5. SIMULADOR -->
-<section class="alt" id="simulador">
+<!-- CTA intermediário -->
+<section class="alt">
   <div class="container">
-    <div class="section-title" style="text-align:center;margin-left:auto;margin-right:auto">
+    <div class="cta-banner">
+      <h2>Está buscando uma orientação inicial?</h2>
+      <p>Pare de pesquisar às cegas. Faça a pré-análise gratuita e entenda os próximos passos para o seu caso.</p>
+      <div class="btn-row" style="justify-content:center;margin-top:20px">
+        <a class="btn btn-primary" href="#simulador">Fazer pré-análise gratuita</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULADOR -->
+<section id="simulador">
+  <div class="container">
+    <div class="section-title center">
       <p class="eyebrow">Analisador de Divórcio Extrajudicial</p>
       <h2>Descubra quais pontos precisam ser analisados no seu caso</h2>
       <p>Responda 3 perguntas simples e receba uma orientação inicial sobre os pontos que precisam ser analisados no seu caso.</p>
@@ -125,7 +235,7 @@
         </div>
         <div class="sim-nav">
           <span></span>
-          <button type="button" class="btn btn-primary" data-sim-next>Continuar</button>
+          <button type="button" class="btn btn-navy" data-sim-next>Continuar</button>
         </div>
       </div>
 
@@ -158,7 +268,7 @@
         </div>
         <div class="sim-nav">
           <button type="button" class="btn-back" data-sim-back>&larr; Voltar</button>
-          <button type="button" class="btn btn-primary" data-sim-next>Continuar</button>
+          <button type="button" class="btn btn-navy" data-sim-next>Continuar</button>
         </div>
       </div>
 
@@ -187,7 +297,7 @@
           </div>
           <div class="sim-nav">
             <button type="button" class="btn-back" data-sim-back>&larr; Voltar</button>
-            <button type="submit" class="btn btn-primary">Ver meu resultado</button>
+            <button type="submit" class="btn btn-navy">Ver meu resultado</button>
           </div>
         </form>
       </div>
@@ -198,36 +308,8 @@
   </div>
 </section>
 
-<!-- 6. Como funciona -->
-<section>
-  <div class="container">
-    <div class="section-title">
-      <h2>Como funciona o divórcio extrajudicial, passo a passo</h2>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="num">01</div><h3>Conversa inicial</h3><p>A Dra. Elaine entende a situação do casal e verifica os requisitos aplicáveis ao caso.</p></div>
-      <div class="step"><div class="num">02</div><h3>Definição dos termos</h3><p>Bens, eventual pensão entre os cônjuges, nome e demais pontos que precisam constar do acordo.</p></div>
-      <div class="step"><div class="num">03</div><h3>Preparação da documentação</h3><p>Organização de tudo o que é necessário para dar entrada no procedimento.</p></div>
-      <div class="step"><div class="num">04</div><h3>Escritura em cartório</h3><p>Com os requisitos e a documentação prontos, o divórcio é formalizado por escritura pública no Tabelionato de Notas.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 7. O que pode ser definido -->
+<!-- Documentos -->
 <section class="alt">
-  <div class="container">
-    <div class="section-title"><h2>Além do divórcio em si, o que mais entra no acordo</h2></div>
-    <div class="cards-grid cols-4">
-      <div class="card"><h3>Partilha de bens</h3><p>Definição sobre os bens comuns, conforme o regime de bens e a situação concreta.</p></div>
-      <div class="card"><h3>Pensão entre os cônjuges</h3><p>Análise sobre existência, valor ou dispensa, quando aplicável.</p></div>
-      <div class="card"><h3>Nome</h3><p>Manter o nome de casado ou retomar o nome anterior.</p></div>
-      <div class="card"><h3>Filhos</h3><p>Quando existirem, análise da situação e das providências necessárias conforme o caso.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 8. Documentos -->
-<section>
   <div class="container">
     <div class="section-title"><h2>Quais documentos costumam ser necessários</h2></div>
     <ul class="checklist">
@@ -243,46 +325,66 @@
   </div>
 </section>
 
-<!-- 9. Por que ter advogado -->
-<section class="alt">
+<!-- Por que advogado -->
+<section>
   <div class="container">
-    <div class="section-title"><h2>Divórcio em cartório também precisa de orientação jurídica</h2></div>
-    <p style="max-width:70ch">Mesmo sendo um procedimento extrajudicial, a assistência de advogado é obrigatória por lei. O papel do advogado não é só assinar: é orientar o casal, explicar as consequências jurídicas do que está sendo acordado e ajudar a preparar os termos da escritura. O CNJ é claro sobre isso — a atuação do advogado é orientação e assessoramento reais, não uma presença formal.</p>
+    <div class="section-title">
+      <h2>Divórcio em cartório também precisa de orientação jurídica</h2>
+    </div>
+    <p style="max-width:70ch">Mesmo sendo um procedimento extrajudicial, a assistência de advogado é obrigatória por lei. O papel do advogado não é só assinar: é orientar o casal, explicar as consequências jurídicas do que está sendo acordado e ajudar a preparar os termos da escritura.</p>
   </div>
 </section>
 
-<!-- 10. Sobre -->
-<section>
+<!-- Advisor (Elaine) -->
+<section class="alt">
   <div class="container">
-    <div class="two-col">
-      <div class="placeholder-photo">Foto da<br>Dra. Elaine<br>(em breve)</div>
+    <div class="section-title center">
+      <p class="eyebrow">Quem vai te orientar</p>
+      <h2>Sua advogada</h2>
+    </div>
+    <div class="advisor-card">
+      <div class="advisor-photo">Foto da<br>Dra. Elaine<br>(em breve)</div>
       <div>
-        <p class="eyebrow">Quem vai te orientar nessa decisão</p>
-        <h2 style="color:var(--ec-navy)">Dra. Elaine Cristina</h2>
-        <p style="color:var(--ec-ink-soft);margin-bottom:4px">Advogada · Direito de Família · OAB/SP 215.743</p>
-        <p>Advogada inscrita na OAB/SP sob o nº 215.743, com atuação em Direito de Família. Atendimento individualizado, com análise cuidadosa de cada caso antes de qualquer orientação, no escritório em Vila Nova Curuçá, São Paulo/SP.</p>
+        <h3>Dra. Elaine Cristina</h3>
+        <p class="advisor-role">Advogada · Direito de Família</p>
+        <p>Elaine Cristina Alves de Souza — OAB/SP 215.743. Atendimento individualizado no escritório em Vila Nova Curuçá, São Paulo/SP, presencial e online.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 11. Diferenciais -->
-<section class="alt">
-  <div class="container">
-    <div class="section-title"><h2>Uma orientação pensada para o seu caso, não um modelo pronto</h2></div>
-    <div class="cards-grid cols-4">
-      <div class="card"><h3>Atendimento individualizado</h3><p>Cada situação familiar tem suas particularidades.</p></div>
-      <div class="card"><h3>Orientação clara</h3><p>Sem juridiquês, explicação objetiva do procedimento e dos requisitos.</p></div>
-      <div class="card"><h3>Análise documental</h3><p>Conferência do que é necessário antes de qualquer promessa.</p></div>
-      <div class="card"><h3>Atualização técnica</h3><p>Inclusive sobre mudanças recentes do CNJ, como a de 2024 sobre filhos menores.</p></div>
+<!-- Why choose us -->
+<section>
+  <div class="container why-grid">
+    <div class="why-photo">[Imagem: Dra. Elaine em atendimento — em breve]</div>
+    <div>
+      <p class="eyebrow">Por que escolher</p>
+      <h2>Uma orientação pensada para o seu caso, não um modelo pronto</h2>
+      <div class="why-list">
+        <div class="why-item"><div class="icon">✓</div><div><h4>Atendimento individualizado</h4><p>Cada situação familiar tem suas próprias particularidades.</p></div></div>
+        <div class="why-item"><div class="icon">✓</div><div><h4>Orientação clara</h4><p>Sem juridiquês, explicação objetiva do procedimento e dos requisitos.</p></div></div>
+        <div class="why-item"><div class="icon">✓</div><div><h4>Análise documental</h4><p>Conferência do que é necessário antes de qualquer promessa.</p></div></div>
+        <div class="why-item"><div class="icon">✓</div><div><h4>Atualização técnica</h4><p>Inclusive sobre mudanças recentes do CNJ, como a de 2024 sobre filhos menores.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 12. FAQ -->
-<section>
+<!-- Missão (substitui depoimento fictício) -->
+<section class="alt">
+  <div class="container quote-block">
+    <blockquote>“O objetivo é dar segurança jurídica para uma decisão importante — com clareza sobre o que pode e o que precisa ser analisado em cada caso, sem promessas vazias.”</blockquote>
+    <cite>Dra. Elaine Cristina — OAB/SP 215.743</cite>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
   <div class="container">
-    <div class="section-title"><h2>Perguntas frequentes</h2></div>
+    <div class="section-title center">
+      <p class="eyebrow">Dúvidas frequentes</p>
+      <h2>Perguntas frequentes</h2>
+    </div>
 
     <details class="faq-item">
       <summary>O que é divórcio extrajudicial?</summary>
@@ -294,11 +396,11 @@
     </details>
     <details class="faq-item">
       <summary>Meu divórcio pode ser feito em cartório?</summary>
-      <p>Depende do caso: consenso entre os dois, situação dos filhos (se houver), bens e demais requisitos legais. A pré-análise no início desta página ajuda a entender os pontos do seu caso específico.</p>
+      <p>Depende do caso: consenso entre os dois, situação dos filhos (se houver), bens e demais requisitos legais. A pré-análise nesta página ajuda a entender os pontos do seu caso específico.</p>
     </details>
     <details class="faq-item">
       <summary>É possível fazer divórcio consensual mesmo tendo filhos?</summary>
-      <p>Em muitos casos sim. Desde 2024, o CNJ passa a admitir hipóteses de divórcio extrajudicial com filhos menores ou incapazes quando guarda, convivência e alimentos já foram resolvidos judicialmente. Vale confirmar a situação específica do seu caso.</p>
+      <p>Em muitos casos sim. Desde 2024, o CNJ passa a admitir hipóteses de divórcio extrajudicial com filhos menores ou incapazes quando guarda, convivência e alimentos já foram resolvidos judicialmente.</p>
     </details>
     <details class="faq-item">
       <summary>Preciso estar de acordo com meu cônjuge?</summary>
@@ -318,11 +420,7 @@
     </details>
     <details class="faq-item">
       <summary>Quais documentos preciso apresentar?</summary>
-      <p>Varia conforme o caso — a lista completa é confirmada depois da análise inicial. Em geral, envolve identificação, CPF, certidão de casamento e, quando aplicável, documentos de filhos e bens.</p>
-    </details>
-    <details class="faq-item">
-      <summary>O casal precisa ir ao cartório pessoalmente?</summary>
-      <p>Isso é confirmado durante a orientação, conforme a situação do caso.</p>
+      <p>Varia conforme o caso — a lista completa é confirmada depois da análise inicial.</p>
     </details>
     <details class="faq-item">
       <summary>E se meu caso não puder ser resolvido em cartório?</summary>
@@ -331,29 +429,54 @@
   </div>
 </section>
 
-<!-- 13. CTA final -->
+<!-- CTA final -->
 <section class="alt">
   <div class="container">
-    <div class="cta-final">
+    <div class="cta-banner">
       <h2>Quer entender qual é o próximo passo para o seu caso?</h2>
       <p>Fale com a Elaine Cristina Advocacia e receba orientação sobre como formalizar o divórcio com segurança.</p>
-      <div class="btn-row" style="justify-content:center">
-        <a class="btn btn-gold" data-wa-cta data-wa-source="cta_final">Falar com a Elaine Cristina Advocacia</a>
-        <a class="btn btn-secondary" style="color:#fff;border-color:#fff" href="#simulador">Fazer pré-análise gratuita</a>
+      <div class="btn-row" style="justify-content:center;margin-top:20px">
+        <a class="btn btn-primary" data-wa-cta data-wa-source="cta_final">Falar com a Elaine Cristina Advocacia</a>
+        <a class="btn btn-outline" href="#simulador">Fazer pré-análise gratuita</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 14. Rodapé -->
-<footer>
+<!-- RODAPÉ -->
+<footer class="site-footer">
   <div class="container">
-    <img src="assets/logo/lockup-horizontal-oab-fundo-azul.png" alt="Elaine Cristina Advocacia — OAB/SP 215.743">
-    <p>Elaine Cristina Alves de Souza — OAB/SP 215.743<br>
-    Av. Nordestina, 4946-A, Sala 05 — Vila Nova Curuçá, São Paulo/SP, CEP 08032-000<br>
-    Tel./WhatsApp: <a href="tel:+5511983134086" data-phone-cta>(11) 98313-4086</a> · <a href="mailto:elainecristinnaadv@gmail.com">elainecristinnaadv@gmail.com</a></p>
-    <p><a href="/politica-de-privacidade">Política de Privacidade</a> · Aviso sobre tratamento de dados (LGPD) · Identificação profissional (OAB)</p>
-    <p class="legal">Publicidade em conformidade com o Provimento nº 205/2021 da OAB. Este site não constitui consulta jurídica; a análise apresentada é inicial e orientativa.</p>
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo/lockup-horizontal-oab-fundo-azul.png" alt="Elaine Cristina Advocacia — OAB/SP 215.743">
+        <p style="max-width:32ch">Sociedade Individual de Advocacia. Direito de Família, Sucessões e Previdenciário.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="#sobre">Sobre</a>
+        <a href="#areas">Áreas de atuação</a>
+        <a href="#simulador">Pré-análise gratuita</a>
+        <a href="#faq">Dúvidas frequentes</a>
+      </div>
+      <div>
+        <h4>Áreas</h4>
+        <a href="#areas">Divórcio Extrajudicial</a>
+        <a href="#areas">Inventário Extrajudicial</a>
+        <a href="#areas">Direito Previdenciário</a>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p>Elaine Cristina Alves de Souza — OAB/SP 215.743<br>
+        Av. Nordestina, 4946-A, Sala 05<br>Vila Nova Curuçá, São Paulo/SP, CEP 08032-000</p>
+        <p><a href="tel:+5511983134086" data-phone-cta>(11) 98313-4086</a><br>
+        <a href="mailto:elainecristinnaadv@gmail.com">elainecristinnaadv@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Elaine Cristina Advocacia. Todos os direitos reservados.</span>
+      <span><a href="/politica-de-privacidade" style="color:#b7c2d6">Política de Privacidade</a></span>
+    </div>
+    <p class="footer-legal">Publicidade em conformidade com o Provimento nº 205/2021 da OAB. Este site não constitui consulta jurídica; a análise apresentada é inicial e orientativa.</p>
   </div>
 </footer>
 
