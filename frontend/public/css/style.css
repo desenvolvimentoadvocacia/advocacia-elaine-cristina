@@ -369,3 +369,156 @@ footer.site-footer { background: var(--ec-navy-deep); color: #b7c2d6; padding: 7
 
 .two-col { display: grid; gap: 32px; align-items: center; }
 @media (min-width: 800px) { .two-col { grid-template-columns: 200px 1fr; } }
+
+/* ============ Marca d'água decorativa (áreas de atuação) ============ */
+.watermark-section { position: relative; overflow: hidden; }
+.watermark-icon {
+  position: absolute;
+  top: 50%; right: -40px;
+  transform: translateY(-50%);
+  width: 320px; height: 320px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+.watermark-section > .container { position: relative; z-index: 1; }
+
+/* ============ Timeline conectada (Como funciona) ============ */
+.process-steps.connected { position: relative; }
+.process-steps.connected::before {
+  content: "";
+  position: absolute;
+  top: 22px; left: 0; right: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.18);
+  display: none;
+}
+@media (min-width: 780px) { .process-steps.connected::before { display: block; } }
+.process-step .num-dot {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: var(--ec-navy);
+  border: 2px solid var(--ec-gold-light);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head);
+  color: var(--ec-gold-light);
+  font-size: 1.05rem;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 14px;
+}
+.process-step { border-left: none; padding-left: 0; text-align: left; }
+
+/* ============ Card flutuante sobre a timeline ============ */
+.floating-card-wrap { position: relative; margin-top: -90px; z-index: 6; }
+.floating-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 0;
+  display: grid;
+  overflow: hidden;
+  max-width: 920px;
+  margin: 0 auto;
+}
+@media (min-width: 720px) { .floating-card { grid-template-columns: 0.85fr 1.15fr; } }
+.floating-card-photo {
+  background: var(--ec-paper-soft);
+  border-right: 1px dashed var(--ec-border);
+  display: flex; align-items: center; justify-content: center;
+  min-height: 180px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--ec-ink-soft);
+  padding: 20px;
+}
+.floating-card-body { padding: 34px 36px; }
+.floating-card-body h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.floating-card-body p { font-size: 0.9rem; margin-bottom: 20px; }
+
+/* ============ Galeria "o que analisamos" (substitui case studies fictício) ============ */
+.analysis-grid { display: grid; gap: 4px; }
+@media (min-width: 640px) { .analysis-grid { grid-template-columns: repeat(3, 1fr); } }
+.analysis-tile {
+  aspect-ratio: 1;
+  background: var(--ec-navy);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  gap: 10px;
+  transition: background 0.2s ease;
+}
+.analysis-tile:nth-child(even) { background: var(--ec-navy-dark); }
+.analysis-tile:hover { background: var(--ec-gold-btn); }
+.analysis-tile .icon { font-size: 1.8rem; }
+.analysis-tile h4 { color: #fff; font-size: 0.95rem; margin: 0; }
+
+/* ============ Citação em card (substitui carrossel de depoimentos falsos) ============ */
+.quote-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 40px;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.quote-card .quote-photo {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--ec-paper-soft);
+  border: 1px dashed var(--ec-border);
+  margin: 0 auto 18px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem;
+  color: var(--ec-ink-soft);
+}
+.quote-card blockquote { font-family: var(--font-head); font-style: italic; font-size: 1.2rem; color: var(--ec-navy); margin: 0 0 16px; line-height: 1.5; }
+.quote-card cite { font-style: normal; font-size: 0.85rem; color: var(--ec-ink-soft); font-weight: 600; }
+.quote-card .quote-tag { display: block; font-size: 0.72rem; color: var(--ec-gold-btn); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+
+/* ============ Blog / conteúdo informativo ============ */
+.blog-card {
+  background: #fff;
+  border: 1px solid var(--ec-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.blog-card-media {
+  aspect-ratio: 16/10;
+  background: var(--ec-paper-soft);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ec-ink-soft);
+  font-size: 0.78rem;
+  text-align: center;
+  padding: 16px;
+}
+.blog-card-body { padding: 24px; }
+.blog-card-tag { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ec-gold-btn); font-weight: 600; margin-bottom: 8px; display: block; }
+.blog-card h3 { font-size: 1.02rem; margin-bottom: 8px; }
+.blog-card p { font-size: 0.88rem; margin: 0; }
+
+/* ============ Badge circular flutuante (substitui estatística inventada) ============ */
+.floating-badge-wrap { position: relative; }
+.floating-badge {
+  position: absolute;
+  bottom: 18px; right: 18px;
+  background: var(--ec-navy);
+  color: #fff;
+  border-radius: 50%;
+  width: 108px; height: 108px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow);
+  font-size: 0.68rem;
+  line-height: 1.3;
+  padding: 10px;
+}
+.floating-badge strong { display: block; font-family: var(--font-head); font-size: 1.05rem; color: var(--ec-gold-light); }
