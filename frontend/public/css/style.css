@@ -196,6 +196,14 @@ section.alt { background: var(--dc-paper-soft); }
 .documentos-list li { display: flex; align-items: center; gap: 12px; background: #fff; padding: 16px 18px; font-size: 0.9rem; color: var(--dc-ink-soft); }
 .documentos-list .doc-icon { flex-shrink: 0; font-size: 1.1rem; }
 
+/* O que é divórcio extrajudicial */
+.o-que-e-grid { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 900px) { .o-que-e-grid { grid-template-columns: 1.1fr 0.9fr; } }
+.o-que-e-box { background: var(--dc-navy); color: #fff; padding: 32px; text-align: center; }
+.o-que-e-box-label { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dc-gold-light); margin-bottom: 12px; }
+.o-que-e-box-formula { font-family: var(--font-head); font-size: 1.05rem; color: #fff; margin: 0; line-height: 1.7; }
+.o-que-e-box-formula span { color: var(--dc-gold-light); margin: 0 4px; }
+
 /* Checklist: pode ser feito em cartório */
 .checklist-grid { display: grid; gap: 48px; align-items: center; }
 @media (min-width: 900px) { .checklist-grid { grid-template-columns: 1fr 1fr; } }
