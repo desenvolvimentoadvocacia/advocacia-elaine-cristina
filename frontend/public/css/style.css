@@ -306,6 +306,34 @@ section.alt { background: var(--dc-paper-soft); }
 .blog-card h3 { font-size: 1.05rem; margin-bottom: 10px; }
 .blog-card .read-more { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; color: var(--dc-navy); }
 
+/* FAQ */
+.faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 2px; }
+.faq-item { background: #fff; border: 1px solid var(--dc-border); padding: 22px 26px; }
+.faq-item summary {
+  font-family: var(--font-head);
+  color: var(--dc-navy);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--dc-gold);
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after { content: "−"; }
+.faq-item p { margin: 14px 0 0; font-size: 0.92rem; color: var(--dc-ink-soft); }
+
 /* Footer */
 footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 70px 0 26px; font-size: 0.88rem; }
 .footer-grid { display: grid; gap: 40px; margin-bottom: 44px; }
