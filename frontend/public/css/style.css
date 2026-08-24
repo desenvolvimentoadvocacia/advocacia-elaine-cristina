@@ -181,6 +181,13 @@ section.alt { background: var(--dc-paper-soft); }
 .practice-card p { font-size: 0.9rem; margin: 0 0 14px; }
 .practice-card .read-more { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; color: var(--dc-navy); }
 
+/* Checklist: pode ser feito em cartório */
+.checklist-grid { display: grid; gap: 48px; align-items: center; }
+@media (min-width: 900px) { .checklist-grid { grid-template-columns: 1fr 1fr; } }
+.checklist-items { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.checklist-items li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.94rem; color: var(--dc-ink-soft); background: var(--dc-paper-soft); border: 1px solid var(--dc-border); padding: 14px 18px; }
+.checklist-items .check { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--dc-gold); color: #fff; font-size: 0.78rem; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+
 /* Timeline */
 .timeline-section {
   background: linear-gradient(rgba(6,51,117,0.92), rgba(6,51,117,0.92)), var(--dc-paper-soft);
