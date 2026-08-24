@@ -181,6 +181,12 @@ section.alt { background: var(--dc-paper-soft); }
 .practice-card p { font-size: 0.9rem; margin: 0 0 14px; }
 .practice-card .read-more { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; color: var(--dc-navy); }
 
+/* Por que contar com advogado */
+.why-advogado { max-width: 700px; margin: 0 auto; text-align: center; }
+.why-advogado-icon { display: inline-flex; width: 56px; height: 56px; border-radius: 50%; background: var(--dc-navy); color: #fff; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px; }
+.why-advogado .eyebrow { display: block; }
+.why-advogado p:last-child { font-size: 1rem; margin: 0; }
+
 /* Documentos necessários */
 .documentos-grid { display: grid; gap: 40px; }
 @media (min-width: 780px) { .documentos-grid { grid-template-columns: 0.9fr 1.1fr; align-items: center; } }
