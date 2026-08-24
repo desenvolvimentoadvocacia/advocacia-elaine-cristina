@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260824-7">
+<link rel="stylesheet" href="css/style.css?v=20260824-8">
 </head>
 <body>
 
@@ -198,59 +198,77 @@
         <div class="wizard-head">
           <span class="wizard-icon">⚖</span>
           <div>
-            <h3>Simulador de Pré-Análise</h3>
-            <p class="wizard-sub">Responda 3 passos rápidos e a Elaine Cristina Advocacia orienta os próximos passos do seu caso.</p>
+            <h3>Analisador de Divórcio Extrajudicial</h3>
+            <p class="wizard-sub">Responda 3 passos rápidos e descubra quais pontos precisam ser analisados no seu caso.</p>
           </div>
         </div>
 
         <div class="wizard-steps" id="wizardSteps">
           <div class="wizard-step active" data-step="1">
             <span class="wizard-step-dot">1</span>
-            <span class="wizard-step-label">Seu caso</span>
+            <span class="wizard-step-label">Situação</span>
           </div>
           <div class="wizard-step-line"></div>
           <div class="wizard-step" data-step="2">
             <span class="wizard-step-dot">2</span>
-            <span class="wizard-step-label">Seus dados</span>
+            <span class="wizard-step-label">Seu caso</span>
           </div>
           <div class="wizard-step-line"></div>
           <div class="wizard-step" data-step="3">
             <span class="wizard-step-dot">3</span>
-            <span class="wizard-step-label">Confirmação</span>
+            <span class="wizard-step-label">Seus dados</span>
           </div>
         </div>
 
         <form id="wizardForm" novalidate>
           <div class="wizard-panel active" data-panel="1">
-            <label class="wizard-label" for="wzArea">Área de interesse</label>
-            <select id="wzArea" required style="width:100%;padding:13px 16px;border:1px solid var(--dc-border);border-radius:4px;font-family:inherit;background:var(--dc-paper-soft);margin-bottom:14px">
-              <option value="">Selecione a área</option>
-              <option>Divórcio Extrajudicial</option>
-              <option>Inventário Extrajudicial</option>
-              <option>Direito Previdenciário</option>
-            </select>
-            <label class="wizard-label" for="wzCaso">Conte um pouco sobre o seu caso</label>
-            <textarea id="wzCaso" placeholder="Ex.: já existe acordo entre as partes? há filhos menores ou bens a partilhar?" style="width:100%;padding:13px 16px;border:1px solid var(--dc-border);border-radius:4px;font-family:inherit;font-size:0.92rem;background:var(--dc-paper-soft);resize:vertical;min-height:90px"></textarea>
+            <label class="wizard-label">Como está a decisão de vocês sobre o divórcio?</label>
+            <div class="wizard-choices" data-field="situacao_casal">
+              <label class="wizard-choice"><input type="radio" name="situacao_casal" value="acordo"><span>Estamos de acordo com o divórcio</span></label>
+              <label class="wizard-choice"><input type="radio" name="situacao_casal" value="acordo_pontos_pendentes"><span>Estamos de acordo, mas ainda precisamos definir alguns pontos</span></label>
+              <label class="wizard-choice"><input type="radio" name="situacao_casal" value="conjuge_nao_concorda"><span>Meu cônjuge ainda não concorda</span></label>
+              <label class="wizard-choice"><input type="radio" name="situacao_casal" value="decidindo"><span>Ainda estamos decidindo</span></label>
+            </div>
           </div>
 
           <div class="wizard-panel" data-panel="2">
+            <label class="wizard-label">Vocês têm filhos?</label>
+            <div class="wizard-choices wizard-choices-compact" data-field="filhos">
+              <label class="wizard-choice"><input type="radio" name="filhos" value="nenhum"><span>Não temos filhos</span></label>
+              <label class="wizard-choice"><input type="radio" name="filhos" value="maiores"><span>Sim, todos maiores de idade</span></label>
+              <label class="wizard-choice"><input type="radio" name="filhos" value="menores"><span>Temos filho(s) menor(es)</span></label>
+              <label class="wizard-choice"><input type="radio" name="filhos" value="incapazes"><span>Temos filho(s) incapaz(es)</span></label>
+            </div>
+            <label class="wizard-label" style="margin-top:18px">Vocês possuem bens que precisam ser considerados?</label>
+            <div class="wizard-choices wizard-choices-compact" data-field="bens">
+              <label class="wizard-choice"><input type="radio" name="bens" value="nao"><span>Não</span></label>
+              <label class="wizard-choice"><input type="radio" name="bens" value="sim"><span>Sim</span></label>
+              <label class="wizard-choice"><input type="radio" name="bens" value="incerto"><span>Não temos certeza</span></label>
+            </div>
+            <div id="wzAcordoBensWrap" style="display:none">
+              <label class="wizard-label" style="margin-top:18px">Existe acordo sobre a divisão dos bens?</label>
+              <div class="wizard-choices wizard-choices-compact" data-field="acordo_bens">
+                <label class="wizard-choice"><input type="radio" name="acordo_bens" value="sim"><span>Sim, já concordamos</span></label>
+                <label class="wizard-choice"><input type="radio" name="acordo_bens" value="pendente"><span>Ainda precisamos definir</span></label>
+                <label class="wizard-choice"><input type="radio" name="acordo_bens" value="sem_acordo"><span>Não conseguimos chegar a um acordo</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="wizard-panel" data-panel="3">
             <label class="wizard-label" for="wzNome">Nome</label>
             <input type="text" id="wzNome" placeholder="Seu nome completo" required style="width:100%;margin-bottom:14px;padding:17px 21px;border:1px solid var(--dc-border);border-radius:4px;font-family:inherit;font-size:1.2rem;background:var(--dc-paper-soft)">
             <label class="wizard-label" for="wzWhats">WhatsApp</label>
             <input type="text" id="wzWhats" placeholder="(11) 90000-0000" required style="width:100%;margin-bottom:14px;padding:17px 21px;border:1px solid var(--dc-border);border-radius:4px;font-family:inherit;font-size:1.2rem;background:var(--dc-paper-soft)">
             <label class="wizard-label" for="wzEmail">E-mail</label>
-            <input type="email" id="wzEmail" placeholder="seu@email.com" style="width:100%;padding:17px 21px;border:1px solid var(--dc-border);border-radius:4px;font-family:inherit;font-size:1.2rem;background:var(--dc-paper-soft)">
+            <input type="email" id="wzEmail" placeholder="seu@email.com" style="width:100%;margin-bottom:14px;padding:17px 21px;border:1px solid var(--dc-border);border-radius:4px;font-family:inherit;font-size:1.2rem;background:var(--dc-paper-soft)">
+            <label class="wizard-label" for="wzCidade">Cidade</label>
+            <input type="text" id="wzCidade" placeholder="Sua cidade" style="width:100%;padding:17px 21px;border:1px solid var(--dc-border);border-radius:4px;font-family:inherit;font-size:1.2rem;background:var(--dc-paper-soft)">
           </div>
 
-          <div class="wizard-panel" data-panel="3">
-            <dl class="wizard-summary" id="wizardSummary"></dl>
-            <div class="btn-row">
-              <a class="btn btn-navy" href="tel:+5511983134086">📞 (11) 98313-4086</a>
-              <a class="btn btn-gold" id="wzSendBtn" href="#" target="_blank" rel="noopener">Enviar via WhatsApp</a>
-            </div>
-          </div>
+          <div class="wizard-panel" data-panel="result" id="wizardResult"></div>
 
-          <div class="wizard-nav">
+          <div class="wizard-nav" id="wizardNav">
             <button type="button" class="btn btn-outline wizard-back" id="wzBack" style="visibility:hidden">← Voltar</button>
             <button type="button" class="btn btn-navy wizard-next" id="wzNext">Continuar →</button>
           </div>
@@ -551,74 +569,180 @@
   var form = document.getElementById('wizardForm');
   if (!form) return;
 
+  var API_BASE = 'https://api.advocaciaelainecristina.com.br';
   var total = 3;
   var current = 1;
   var steps = document.querySelectorAll('.wizard-step');
-  var panels = document.querySelectorAll('.wizard-panel');
+  var panels = document.querySelectorAll('.wizard-panel[data-panel]');
   var backBtn = document.getElementById('wzBack');
   var nextBtn = document.getElementById('wzNext');
-  var summary = document.getElementById('wizardSummary');
-  var sendBtn = document.getElementById('wzSendBtn');
+  var wizardNav = document.getElementById('wizardNav');
+  var resultBox = document.getElementById('wizardResult');
+  var acordoBensWrap = document.getElementById('wzAcordoBensWrap');
+
+  var RESULTADOS = {
+    A: { titulo: '🟢 Perfil identificado: Divórcio consensual', texto: 'Pelas respostas, seu caso apresenta características compatíveis com uma possível análise pela via extrajudicial. O que ainda precisa ser verificado: documentação pessoal, situação patrimonial (se houver) e os demais requisitos aplicáveis ao caso.' },
+    B: { titulo: '🟢 Perfil identificado: Divórcio consensual com patrimônio', texto: 'Como existem bens envolvidos, será necessário analisar o regime de bens, a documentação patrimonial e os termos acordados pelo casal antes de seguir para o cartório.' },
+    C: { titulo: '🟡 Análise necessária: Divórcio consensual com filhos menores', texto: 'Existem elementos que permitem avaliar a via extrajudicial, mas a situação dos filhos precisa ser verificada de acordo com o que já foi decidido sobre guarda, convivência e alimentos.' },
+    D: { titulo: '🟠 Seu caso precisa de uma análise específica', texto: 'Como não há consenso entre os cônjuges ainda, a situação é diferente de um divórcio consensual típico — mas isso não significa que a via extrajudicial esteja descartada. Vale entender qual é o caminho mais adequado agora.' }
+  };
 
   function fieldValue(id) {
     var el = document.getElementById(id);
     return el ? el.value.trim() : '';
   }
 
-  function validateStep(step) {
-    if (step === 1 && !fieldValue('wzArea')) {
-      document.getElementById('wzArea').focus();
-      return false;
+  function radioValue(name) {
+    var el = form.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : '';
+  }
+
+  function getSessionId() {
+    var key = 'ec_session_id';
+    var id = sessionStorage.getItem(key);
+    if (!id) {
+      id = 'sess_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+      sessionStorage.setItem(key, id);
     }
-    if (step === 2 && (!fieldValue('wzNome') || !fieldValue('wzWhats'))) {
+    return id;
+  }
+
+  function captureAttribution() {
+    var params = new URLSearchParams(window.location.search);
+    var fields = ['gclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    var stored = JSON.parse(sessionStorage.getItem('ec_attribution') || '{}');
+    fields.forEach(function (f) {
+      var v = params.get(f);
+      if (v) stored[f] = v;
+    });
+    sessionStorage.setItem('ec_attribution', JSON.stringify(stored));
+    return stored;
+  }
+
+  var attribution = captureAttribution();
+
+  // Mostra a pergunta 3 (acordo sobre bens) só se "bens" = sim
+  form.addEventListener('change', function (e) {
+    if (e.target.name === 'bens') {
+      acordoBensWrap.style.display = e.target.value === 'sim' ? 'block' : 'none';
+      if (e.target.value !== 'sim') {
+        var checked = form.querySelector('input[name="acordo_bens"]:checked');
+        if (checked) checked.checked = false;
+      }
+    }
+  });
+
+  function validateStep(step) {
+    if (step === 1 && !radioValue('situacao_casal')) return false;
+    if (step === 2) {
+      if (!radioValue('filhos') || !radioValue('bens')) return false;
+      if (radioValue('bens') === 'sim' && !radioValue('acordo_bens')) return false;
+    }
+    if (step === 3 && (!fieldValue('wzNome') || !fieldValue('wzWhats'))) {
       document.getElementById(fieldValue('wzNome') ? 'wzWhats' : 'wzNome').focus();
       return false;
     }
     return true;
   }
 
-  function buildSummary() {
-    var area = fieldValue('wzArea') || 'Não informado';
-    var caso = fieldValue('wzCaso') || 'Não informado';
+  function localFallbackClassificacao() {
+    var situacao = radioValue('situacao_casal');
+    var filhos = radioValue('filhos');
+    var bens = radioValue('bens');
+    if (situacao === 'conjuge_nao_concorda' || situacao === 'decidindo') return 'D';
+    if (filhos === 'menores' || filhos === 'incapazes') return 'C';
+    if (bens === 'sim') return 'B';
+    return 'A';
+  }
+
+  function renderResult(letra) {
+    var r = RESULTADOS[letra] || RESULTADOS.A;
     var nome = fieldValue('wzNome');
-    var whats = fieldValue('wzWhats');
-    var email = fieldValue('wzEmail') || 'Não informado';
+    resultBox.innerHTML =
+      '<div class="wizard-result-badge">' + r.titulo + '</div>' +
+      '<p class="wizard-result-text">' + r.texto + '</p>' +
+      '<div class="btn-row">' +
+      '<a class="btn btn-navy" href="tel:+5511983134086">📞 (11) 98313-4086</a>' +
+      '<a class="btn btn-gold" href="#" id="wzSendBtn" target="_blank" rel="noopener">Falar com a Elaine Cristina Advocacia</a>' +
+      '</div>';
+    var msg = 'Olá! Fiz a pré-análise no site (perfil ' + letra + ') e gostaria de conversar sobre o meu caso.' + (nome ? ' Nome: ' + nome : '');
+    document.getElementById('wzSendBtn').href = 'https://wa.me/5511983134086?text=' + encodeURIComponent(msg);
+  }
 
-    summary.innerHTML =
-      '<dt>Área de interesse</dt><dd>' + area + '</dd>' +
-      '<dt>Sobre o caso</dt><dd>' + caso + '</dd>' +
-      '<dt>Nome</dt><dd>' + nome + '</dd>' +
-      '<dt>WhatsApp</dt><dd>' + whats + '</dd>' +
-      '<dt>E-mail</dt><dd>' + email + '</dd>';
+  function submitLead() {
+    nextBtn.disabled = true;
+    nextBtn.textContent = 'Enviando...';
 
-    var msg = 'Olá! Fiz uma pré-análise no site sobre ' + area + '.\n' +
-      'Nome: ' + nome + '\n' +
-      'Caso: ' + caso;
-    sendBtn.href = 'https://wa.me/5511983134086?text=' + encodeURIComponent(msg);
+    var payload = {
+      nome: fieldValue('wzNome'),
+      whatsapp: fieldValue('wzWhats'),
+      email: fieldValue('wzEmail') || undefined,
+      cidade: fieldValue('wzCidade') || undefined,
+      situacao_casal: radioValue('situacao_casal'),
+      filhos: radioValue('filhos'),
+      bens: radioValue('bens'),
+      acordo_bens: radioValue('bens') === 'sim' ? radioValue('acordo_bens') : undefined,
+      canal_preferido: 'whatsapp',
+      gclid: attribution.gclid,
+      utm_source: attribution.utm_source,
+      utm_medium: attribution.utm_medium,
+      utm_campaign: attribution.utm_campaign,
+      utm_term: attribution.utm_term,
+      utm_content: attribution.utm_content,
+      landing_page: window.location.href
+    };
+
+    fetch(API_BASE + '/api/leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        current = 'result';
+        renderResult(data.resultado_lp || localFallbackClassificacao());
+        render();
+      })
+      .catch(function (err) {
+        console.error('[simulador] falha ao enviar lead', err);
+        current = 'result';
+        renderResult(localFallbackClassificacao());
+        render();
+      });
   }
 
   function render() {
     steps.forEach(function (s) {
       var n = Number(s.getAttribute('data-step'));
       s.classList.toggle('active', n === current);
-      s.classList.toggle('done', n < current);
+      s.classList.toggle('done', typeof current === 'number' ? n < current : true);
     });
     panels.forEach(function (p) {
-      p.classList.toggle('active', Number(p.getAttribute('data-panel')) === current);
+      var panelId = p.getAttribute('data-panel');
+      p.classList.toggle('active', panelId === String(current));
     });
-    backBtn.style.visibility = current === 1 ? 'hidden' : 'visible';
-    nextBtn.style.display = current === total ? 'none' : 'inline-flex';
-    if (current === total) buildSummary();
+    if (current === 'result') {
+      wizardNav.style.display = 'none';
+    } else {
+      wizardNav.style.display = 'flex';
+      backBtn.style.visibility = current === 1 ? 'hidden' : 'visible';
+      nextBtn.disabled = false;
+      nextBtn.textContent = current === total ? 'Ver meu resultado →' : 'Continuar →';
+    }
   }
 
   nextBtn.addEventListener('click', function () {
     if (!validateStep(current)) return;
-    if (current < total) current += 1;
+    if (current === total) {
+      submitLead();
+      return;
+    }
+    current += 1;
     render();
   });
 
   backBtn.addEventListener('click', function () {
-    if (current > 1) current -= 1;
+    if (typeof current === 'number' && current > 1) current -= 1;
     render();
   });
 
