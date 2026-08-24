@@ -3,10 +3,10 @@
   --ec-navy-dark: #00234f;
   --ec-navy-deep: #001630;
   --ec-blue-accent: #0054a5;
-  --ec-gold: #c2b87c;
-  --ec-gold-light: #d6cc70;
+  --ec-gold: #d7cb70;
+  --ec-gold-light: #d9b686;
   --ec-gold-dark: #a49864;
-  --ec-gold-btn: #b3985f;
+  --ec-gold-btn: #d7cb70;
   --ec-ink: #262b3e;
   --ec-ink-soft: #56607a;
   --ec-paper: #ffffff;
@@ -33,7 +33,7 @@ body {
   line-height: 1.75;
 }
 
-h1, h2, h3, h4 { font-family: var(--font-head); margin: 0 0 0.5em; line-height: 1.25; color: var(--ec-navy); font-weight: 700; }
+h1, h2, h3, h4 { font-family: var(--font-head); margin: 0 0 0.5em; line-height: 1.25; color: var(--ec-navy); font-weight: 600; }
 p { margin: 0 0 1em; }
 a { color: var(--ec-blue-accent); text-decoration: none; }
 img { max-width: 100%; display: block; }
@@ -85,15 +85,15 @@ ul { margin: 0; padding: 0; }
 .topbar .topbar-links { display: flex; gap: 24px; }
 
 /* Header */
-.site-header { background: var(--ec-navy); padding: 18px 0; position: relative; z-index: 30; }
-.site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.site-header img.brand-logo { height: 46px; width: auto; }
+.site-header { background: #fff; padding: 18px 0; border-bottom: 1px solid var(--ec-border); position: relative; z-index: 30; }
+.site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.site-header img.brand-logo { height: 56px; width: auto; }
 .main-nav { display: none; gap: 28px; }
-.main-nav a { color: #e8ecf6; font-size: 0.92rem; font-weight: 500; }
-.main-nav a:hover { color: var(--ec-gold-light); }
+.main-nav a { color: var(--ec-ink); font-size: 0.92rem; font-weight: 500; }
+.main-nav a:hover { color: var(--ec-gold-dark); }
 .header-right { display: flex; align-items: center; gap: 20px; }
-.header-phone { display: none; color: #fff; font-family: var(--font-head); font-size: 1rem; }
-.header-phone span { display: block; font-family: var(--font-body); font-size: 0.72rem; color: var(--ec-gold-light); text-transform: uppercase; letter-spacing: 0.08em; }
+.header-phone { display: none; color: var(--ec-navy); font-family: var(--font-head); font-size: 1rem; }
+.header-phone span { display: block; font-family: var(--font-body); font-size: 0.72rem; color: var(--ec-ink-soft); text-transform: uppercase; letter-spacing: 0.08em; }
 @media (min-width: 900px) {
   .main-nav { display: flex; }
   .header-phone { display: block; }
@@ -110,7 +110,7 @@ ul { margin: 0; padding: 0; }
 .hero-grid { display: grid; gap: 40px; align-items: center; position: relative; z-index: 2; }
 @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.05fr 0.95fr; } }
 .hero .eyebrow { color: var(--ec-gold-light); }
-.hero h1 { color: #fff; font-size: clamp(2.1rem, 4.4vw, 3.1rem); font-style: italic; font-weight: 700; }
+.hero h1 { color: #fff; font-size: clamp(2.1rem, 4.4vw, 3.1rem); font-weight: 600; }
 .hero p.lead { color: #dbe3f1; font-size: 1.08rem; max-width: 48ch; font-family: var(--font-body); }
 .hero-visual {
   border-radius: var(--radius-lg);
@@ -156,6 +156,8 @@ ul { margin: 0; padding: 0; }
 }
 .badge-card h3 { font-size: 1.02rem; margin-bottom: 4px; }
 .badge-card p { font-size: 0.88rem; margin: 0; }
+.badge-card:nth-child(2) { background: var(--ec-gold-btn); }
+.badge-card:nth-child(2) h3, .badge-card:nth-child(2) p, .badge-card:nth-child(2) .icon { color: #fff !important; background: transparent; }
 
 /* Seções */
 section { padding: 88px 0; }
@@ -165,7 +167,7 @@ section.dark h2, section.dark h3 { color: #fff; }
 section.tight { padding: 60px 0; }
 .section-title { max-width: 62ch; margin-bottom: 40px; }
 .section-title.center { margin-left: auto; margin-right: auto; text-align: center; }
-.section-title h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-style: italic; }
+.section-title h2 { font-size: clamp(1.6rem, 3.2vw, 2.2rem); }
 
 /* About */
 .about-grid { display: grid; gap: 48px; align-items: center; }
@@ -258,7 +260,7 @@ section.tight { padding: 60px 0; }
   padding: 56px 36px;
   text-align: center;
 }
-.cta-banner h2 { color: #fff; font-style: italic; }
+.cta-banner h2 { color: #fff; }
 .cta-banner p { color: #dbe3f1; }
 
 /* Advisor (perfil único) */
