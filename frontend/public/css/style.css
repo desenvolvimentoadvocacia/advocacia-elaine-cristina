@@ -181,6 +181,15 @@ section.alt { background: var(--dc-paper-soft); }
 .practice-card p { font-size: 0.9rem; margin: 0 0 14px; }
 .practice-card .read-more { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; color: var(--dc-navy); }
 
+/* Documentos necessários */
+.documentos-grid { display: grid; gap: 40px; }
+@media (min-width: 780px) { .documentos-grid { grid-template-columns: 0.9fr 1.1fr; align-items: center; } }
+.documentos-grid .section-title { margin-bottom: 0; max-width: 46ch; }
+.documentos-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; background: var(--dc-border); }
+@media (min-width: 560px) { .documentos-list { grid-template-columns: 1fr 1fr; } }
+.documentos-list li { display: flex; align-items: center; gap: 12px; background: #fff; padding: 16px 18px; font-size: 0.9rem; color: var(--dc-ink-soft); }
+.documentos-list .doc-icon { flex-shrink: 0; font-size: 1.1rem; }
+
 /* Checklist: pode ser feito em cartório */
 .checklist-grid { display: grid; gap: 48px; align-items: center; }
 @media (min-width: 900px) { .checklist-grid { grid-template-columns: 1fr 1fr; } }
