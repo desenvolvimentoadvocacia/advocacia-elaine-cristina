@@ -422,4 +422,5 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
   .badges-row { margin-top: 0; margin-bottom: 30px; }
   #sobre { padding-bottom: 10px; }
   #o-que-e { padding-top: 10px; padding-bottom: 5px; }
+  #documentos { padding-top: 24px; }
 }
