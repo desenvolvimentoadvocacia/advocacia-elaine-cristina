@@ -434,9 +434,9 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
   .quote-block .mark-close { margin-top: 10px; }
   .quote-block p { font-size: 0.94rem; }
   #blog { padding-top: 40px; }
-  .testimonial-card { padding: 26px; }
-  .testimonial-photo { width: 50px; height: 50px; font-size: 1rem !important; margin-bottom: 12px; }
-  .testimonial-card p { font-size: 0.66rem; }
-  .testimonial-card h4 { font-size: 0.68rem; }
-  .testimonial-card span { font-size: 0.56rem; }
+  .testimonial-card { padding: 30px; }
+  .testimonial-photo { width: 58px; height: 58px; font-size: 1.15rem !important; margin-bottom: 14px; }
+  .testimonial-card p { font-size: 0.76rem; }
+  .testimonial-card h4 { font-size: 0.78rem; }
+  .testimonial-card span { font-size: 0.64rem; }
 }
