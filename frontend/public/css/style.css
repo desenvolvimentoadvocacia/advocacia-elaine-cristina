@@ -417,7 +417,9 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
 .two-col { display: grid; gap: 32px; align-items: center; }
 
 @media (max-width: 767px) {
-  #checklist { padding-bottom: 40px; }
+  #checklist { padding-top: 5px; padding-bottom: 40px; }
   #faq { padding-top: 40px; padding-bottom: 40px; }
   .badges-row { margin-top: 0; margin-bottom: 30px; }
+  #sobre { padding-bottom: 10px; }
+  #o-que-e { padding-top: 10px; padding-bottom: 5px; }
 }
