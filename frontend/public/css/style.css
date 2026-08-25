@@ -187,7 +187,7 @@ section.alt { background: var(--dc-paper-soft); }
 .about-highlight .icon { color: var(--dc-gold); font-size: 1.4rem; flex-shrink: 0; }
 .about-highlight h4 { font-size: 0.98rem; margin-bottom: 4px; }
 .about-highlight p { font-size: 0.86rem; margin: 0; }
-.about-signature { margin: 0; font-family: var(--font-head); font-style: italic; color: var(--dc-navy); font-size: 1rem; text-align: center; }
+.about-signature { margin: 6px 0 0; font-family: var(--font-head); font-style: italic; color: #fff; font-size: 0.85rem; text-align: center; }
 
 /* Practice area */
 .watermark-section { position: relative; overflow: hidden; }
@@ -416,4 +416,5 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
 @media (max-width: 767px) {
   #checklist { padding-bottom: 40px; }
   #faq { padding-top: 40px; padding-bottom: 40px; }
+  .badges-row { margin-top: 0; margin-bottom: 30px; }
 }
