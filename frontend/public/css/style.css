@@ -442,6 +442,6 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
   .hero .eyebrow { font-size: 0.72rem; }
   .hero h1 { letter-spacing: -0.03em; word-spacing: -0.06em; }
   .hero p.lead { font-size: 0.82rem; }
-  .hero .btn { padding: 12px 27px; font-size: 0.64rem; }
+  .hero .btn { padding: 13px 30px; font-size: 0.70rem; }
   .cta-banner .btn { padding: 17px 39px; font-size: 0.92rem; }
 }
