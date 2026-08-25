@@ -75,7 +75,8 @@ ul { margin: 0; padding: 0; }
 .topbar .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 .topbar a { color: #c3c8d6; }
 .topbar .topbar-links { display: flex; gap: 24px; align-items: center; }
-.topbar .free-consult { color: var(--dc-gold); font-weight: 600; }
+.topbar .topbar-whatsapp { color: var(--dc-gold); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+.topbar .topbar-whatsapp:hover { color: #fff; }
 
 /* Header */
 .site-header { background: #fff; padding: 18px 0; border-bottom: 1px solid var(--dc-border); position: relative; z-index: 30; }
@@ -113,12 +114,6 @@ ul { margin: 0; padding: 0; }
 @media (max-width: 1099px) {
   .site-header .container { justify-content: space-between; }
 }
-@media (max-width: 480px) {
-  /* Espaco curto: mantem so o CTA dominante (pre-analise) no header, WhatsApp continua
-     disponivel na topbar, hero, card flutuante e tela de resultado do simulador. */
-  .header-right .header-cta-secondary { display: none; }
-}
-
 /* Hero */
 .hero { background: var(--dc-navy); color: #fff; position: relative; overflow: hidden; }
 .hero-grid { display: grid; gap: 0; align-items: stretch; min-height: 560px; }
