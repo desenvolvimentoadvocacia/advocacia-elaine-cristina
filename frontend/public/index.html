@@ -8,7 +8,17 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260824-8">
+<link rel="stylesheet" href="css/style.css?v=20260824-9">
+
+<!-- GA4 + Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3LQWKST17H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3LQWKST17H');
+  gtag('config', 'AW-18407805712');
+</script>
 </head>
 <body>
 
@@ -564,38 +574,10 @@
   </div>
 </footer>
 
+<!-- Tracking: eventos de microconversão (GA4 + banco próprio) -->
 <script>
 (function () {
-  var form = document.getElementById('wizardForm');
-  if (!form) return;
-
   var API_BASE = 'https://api.advocaciaelainecristina.com.br';
-  var total = 3;
-  var current = 1;
-  var steps = document.querySelectorAll('.wizard-step');
-  var panels = document.querySelectorAll('.wizard-panel[data-panel]');
-  var backBtn = document.getElementById('wzBack');
-  var nextBtn = document.getElementById('wzNext');
-  var wizardNav = document.getElementById('wizardNav');
-  var resultBox = document.getElementById('wizardResult');
-  var acordoBensWrap = document.getElementById('wzAcordoBensWrap');
-
-  var RESULTADOS = {
-    A: { titulo: '🟢 Perfil identificado: Divórcio consensual', texto: 'Pelas respostas, seu caso apresenta características compatíveis com uma possível análise pela via extrajudicial. O que ainda precisa ser verificado: documentação pessoal, situação patrimonial (se houver) e os demais requisitos aplicáveis ao caso.' },
-    B: { titulo: '🟢 Perfil identificado: Divórcio consensual com patrimônio', texto: 'Como existem bens envolvidos, será necessário analisar o regime de bens, a documentação patrimonial e os termos acordados pelo casal antes de seguir para o cartório.' },
-    C: { titulo: '🟡 Análise necessária: Divórcio consensual com filhos menores', texto: 'Existem elementos que permitem avaliar a via extrajudicial, mas a situação dos filhos precisa ser verificada de acordo com o que já foi decidido sobre guarda, convivência e alimentos.' },
-    D: { titulo: '🟠 Seu caso precisa de uma análise específica', texto: 'Como não há consenso entre os cônjuges ainda, a situação é diferente de um divórcio consensual típico — mas isso não significa que a via extrajudicial esteja descartada. Vale entender qual é o caminho mais adequado agora.' }
-  };
-
-  function fieldValue(id) {
-    var el = document.getElementById(id);
-    return el ? el.value.trim() : '';
-  }
-
-  function radioValue(name) {
-    var el = form.querySelector('input[name="' + name + '"]:checked');
-    return el ? el.value : '';
-  }
 
   function getSessionId() {
     var key = 'ec_session_id';
@@ -621,8 +603,91 @@
 
   var attribution = captureAttribution();
 
+  function trackEvent(name, detail) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', name, detail || {});
+    }
+    fetch(API_BASE + '/api/eventos', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        evento: name,
+        session_id: getSessionId(),
+        gclid: attribution.gclid || null,
+        detalhe: detail || {}
+      })
+    }).catch(function () {});
+  }
+  window.ecTrackEvent = trackEvent;
+  window.ecAttribution = attribution;
+
+  // Rolagem: 50% e 90%
+  var scrollFired = { 50: false, 90: false };
+  window.addEventListener('scroll', function () {
+    var doc = document.documentElement;
+    var pct = ((window.scrollY + window.innerHeight) / doc.scrollHeight) * 100;
+    if (pct >= 50 && !scrollFired[50]) { scrollFired[50] = true; trackEvent('scroll_50'); }
+    if (pct >= 90 && !scrollFired[90]) { scrollFired[90] = true; trackEvent('scroll_90'); }
+  }, { passive: true });
+
+  // Cliques em WhatsApp e telefone em qualquer lugar do site
+  document.querySelectorAll('a[href^="https://wa.me"]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var section = el.closest('section, header, footer, div[id]');
+      trackEvent('click_whatsapp', { source: (section && section.id) || 'generic' });
+    });
+  });
+  document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var section = el.closest('section, header, footer, div[id]');
+      trackEvent('click_phone', { source: (section && section.id) || 'generic' });
+    });
+  });
+
+  trackEvent('page_view');
+})();
+</script>
+
+<script>
+(function () {
+  var form = document.getElementById('wizardForm');
+  if (!form) return;
+
+  var API_BASE = 'https://api.advocaciaelainecristina.com.br';
+  var total = 3;
+  var current = 1;
+  var steps = document.querySelectorAll('.wizard-step');
+  var panels = document.querySelectorAll('.wizard-panel[data-panel]');
+  var backBtn = document.getElementById('wzBack');
+  var nextBtn = document.getElementById('wzNext');
+  var wizardNav = document.getElementById('wizardNav');
+  var resultBox = document.getElementById('wizardResult');
+  var acordoBensWrap = document.getElementById('wzAcordoBensWrap');
+
+  var RESULTADOS = {
+    A: { titulo: '🟢 Perfil identificado: Divórcio consensual', texto: 'Pelas respostas, seu caso apresenta características compatíveis com uma possível análise pela via extrajudicial. O que ainda precisa ser verificado: documentação pessoal, situação patrimonial (se houver) e os demais requisitos aplicáveis ao caso.' },
+    B: { titulo: '🟢 Perfil identificado: Divórcio consensual com patrimônio', texto: 'Como existem bens envolvidos, será necessário analisar o regime de bens, a documentação patrimonial e os termos acordados pelo casal antes de seguir para o cartório.' },
+    C: { titulo: '🟡 Análise necessária: Divórcio consensual com filhos menores', texto: 'Existem elementos que permitem avaliar a via extrajudicial, mas a situação dos filhos precisa ser verificada de acordo com o que já foi decidido sobre guarda, convivência e alimentos.' },
+    D: { titulo: '🟠 Seu caso precisa de uma análise específica', texto: 'Como não há consenso entre os cônjuges ainda, a situação é diferente de um divórcio consensual típico — mas isso não significa que a via extrajudicial esteja descartada. Vale entender qual é o caminho mais adequado agora.' }
+  };
+
+  var attribution = window.ecAttribution || {};
+  var trackEvent = window.ecTrackEvent || function () {};
+  var formStarted = false;
+
+  function fieldValue(id) {
+    var el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+  }
+
+  function radioValue(name) {
+    var el = form.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : '';
+  }
+
   // Mostra a pergunta 3 (acordo sobre bens) só se "bens" = sim
   form.addEventListener('change', function (e) {
+    if (!formStarted) { formStarted = true; trackEvent('start_form'); }
     if (e.target.name === 'bens') {
       acordoBensWrap.style.display = e.target.value === 'sim' ? 'block' : 'none';
       if (e.target.value !== 'sim') {
@@ -655,18 +720,26 @@
     return 'A';
   }
 
-  function renderResult(letra) {
+  function renderResult(letra, leadId) {
     var r = RESULTADOS[letra] || RESULTADOS.A;
     var nome = fieldValue('wzNome');
     resultBox.innerHTML =
       '<div class="wizard-result-badge">' + r.titulo + '</div>' +
       '<p class="wizard-result-text">' + r.texto + '</p>' +
       '<div class="btn-row">' +
-      '<a class="btn btn-navy" href="tel:+5511983134086">📞 (11) 98313-4086</a>' +
+      '<a class="btn btn-navy" href="tel:+5511983134086" id="wzCallBtn">📞 (11) 98313-4086</a>' +
       '<a class="btn btn-gold" href="#" id="wzSendBtn" target="_blank" rel="noopener">Falar com a Elaine Cristina Advocacia</a>' +
       '</div>';
     var msg = 'Olá! Fiz a pré-análise no site (perfil ' + letra + ') e gostaria de conversar sobre o meu caso.' + (nome ? ' Nome: ' + nome : '');
     document.getElementById('wzSendBtn').href = 'https://wa.me/5511983134086?text=' + encodeURIComponent(msg);
+
+    // Cliques aqui vêm de um lead ja qualificado e salvo — evento distinto dos cliques genéricos do site
+    document.getElementById('wzSendBtn').addEventListener('click', function () {
+      trackEvent('lead_result_whatsapp', { lead_id: leadId, resultado: letra });
+    });
+    document.getElementById('wzCallBtn').addEventListener('click', function () {
+      trackEvent('lead_result_phone', { lead_id: leadId, resultado: letra });
+    });
   }
 
   function submitLead() {
@@ -699,14 +772,18 @@
     })
       .then(function (r) { return r.json(); })
       .then(function (data) {
+        var letra = data.resultado_lp || localFallbackClassificacao();
+        trackEvent('lead_form', { lead_id: data.id, resultado: letra });
         current = 'result';
-        renderResult(data.resultado_lp || localFallbackClassificacao());
+        renderResult(letra, data.id);
         render();
       })
       .catch(function (err) {
         console.error('[simulador] falha ao enviar lead', err);
+        var letra = localFallbackClassificacao();
+        trackEvent('lead_form', { lead_id: null, resultado: letra, erro: true });
         current = 'result';
-        renderResult(localFallbackClassificacao());
+        renderResult(letra, null);
         render();
       });
   }
@@ -738,6 +815,7 @@
       return;
     }
     current += 1;
+    trackEvent('form_step_' + current);
     render();
   });
 
