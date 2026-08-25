@@ -417,10 +417,10 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
 .two-col { display: grid; gap: 32px; align-items: center; }
 
 @media (max-width: 767px) {
-  #checklist { padding-top: 5px; padding-bottom: 56px; }
+  #checklist { padding-top: 20px; padding-bottom: 56px; }
   #faq { padding-top: 56px; padding-bottom: 56px; }
   .badges-row { margin-top: 0; margin-bottom: 30px; }
   #sobre { padding-bottom: 30px; }
-  #o-que-e { padding-top: 30px; padding-bottom: 5px; }
+  #o-que-e { padding-top: 30px; padding-bottom: 20px; }
   #documentos { padding-top: 24px; }
 }
