@@ -432,7 +432,7 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
   #por-que-advogado + section + section { padding-top: 20px; padding-bottom: 40px; }
   .quote-block .mark { font-size: 2.25rem; }
   .quote-block .mark-close { margin-top: 10px; display: block; }
-  .quote-block p { font-size: 0.96rem; }
+  .quote-block p { font-size: 1.056rem; }
   #blog { padding-top: 40px; }
   .testimonial-card { padding: 30px; }
   .testimonial-photo { width: 58px; height: 58px; font-size: 1.15rem !important; margin-bottom: 14px; }
