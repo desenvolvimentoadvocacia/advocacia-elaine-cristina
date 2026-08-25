@@ -121,6 +121,7 @@ ul { margin: 0; padding: 0; }
   .site-header .container { justify-content: space-between; }
 }
 @media (max-width: 767px) {
+  section { padding: 45px 0; }
   .site-header { padding: 8px 0; }
   .site-header .container { gap: 0 12px; flex-wrap: nowrap; }
   .site-header .brand-logo img { height: 44px; }
@@ -142,6 +143,7 @@ ul { margin: 0; padding: 0; }
 .hero-arrow.left { left: 24px; }
 .hero-arrow.right { left: calc(50% - 22px); }
 @media (max-width: 899px) {
+  .hero-grid { min-height: 0; }
   .hero-photo { order: -1; min-height: 260px; }
   .hero-copy { padding: 40px 24px; }
   .hero-copy .btn-row { justify-content: center; }
@@ -169,8 +171,8 @@ section.alt { background: var(--dc-paper-soft); }
 @media (min-width: 900px) { .about-grid { grid-template-columns: 0.9fr 1.1fr; } }
 .about-photo-wrap { position: relative; }
 .about-photo { border-radius: var(--radius-lg); overflow: hidden; min-height: 340px; background-size: cover; background-position: center; }
+.about-badge-group { position: absolute; bottom: -20px; right: -20px; display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .about-stat-badge {
-  position: absolute; bottom: -20px; right: -20px;
   background: var(--dc-gold); color: #fff;
   border-radius: var(--radius-lg); padding: 18px 24px;
   box-shadow: var(--shadow); text-align: center; min-width: 150px;
@@ -183,7 +185,7 @@ section.alt { background: var(--dc-paper-soft); }
 .about-highlight .icon { color: var(--dc-gold); font-size: 1.4rem; flex-shrink: 0; }
 .about-highlight h4 { font-size: 0.98rem; margin-bottom: 4px; }
 .about-highlight p { font-size: 0.86rem; margin: 0; }
-.about-signature { margin-top: 22px; font-family: var(--font-head); font-style: italic; color: var(--dc-navy); font-size: 1.3rem; }
+.about-signature { margin: 0; font-family: var(--font-head); font-style: italic; color: var(--dc-navy); font-size: 1rem; text-align: center; }
 
 /* Practice area */
 .watermark-section { position: relative; overflow: hidden; }
