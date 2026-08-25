@@ -120,6 +120,10 @@ ul { margin: 0; padding: 0; }
 @media (max-width: 1099px) {
   .site-header .container { justify-content: space-between; }
 }
+@media (max-width: 767px) {
+  .header-right { margin-left: auto; }
+  .site-header .btn { padding: 11px 25px; font-size: 0.6rem; }
+}
 /* Hero */
 .hero { background: var(--dc-navy); color: #fff; position: relative; overflow: hidden; }
 .hero-grid { display: grid; gap: 0; align-items: stretch; min-height: 560px; }
