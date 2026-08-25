@@ -243,7 +243,8 @@ section.alt { background: var(--dc-paper-soft); }
 @media (min-width: 780px) { .timeline-steps { grid-template-columns: repeat(4, 1fr); } }
 .timeline-steps::before { content: ""; position: absolute; top: 22px; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.18); display: none; }
 @media (min-width: 780px) { .timeline-steps::before { display: block; } }
-.timeline-step .dot { width: 46px; height: 46px; border-radius: 50%; background: var(--dc-navy-deep); border: 2px solid var(--dc-gold-light); display: flex; align-items: center; justify-content: center; font-family: var(--font-head); color: var(--dc-gold-light); font-size: 1rem; position: relative; z-index: 1; margin-bottom: 14px; }
+.timeline-step { text-align: center; }
+.timeline-step .dot { width: 46px; height: 46px; border-radius: 50%; background: var(--dc-navy-deep); border: 2px solid var(--dc-gold-light); display: flex; align-items: center; justify-content: center; font-family: var(--font-head); color: var(--dc-gold-light); font-size: 1rem; position: relative; z-index: 1; margin: 0 auto 14px; }
 .timeline-step .date { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--dc-gold-light); margin-bottom: 6px; display: block; }
 .timeline-step h4 { color: #fff; font-size: 1rem; margin: 0 0 6px; }
 
