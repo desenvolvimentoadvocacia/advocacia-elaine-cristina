@@ -162,7 +162,7 @@ ul { margin: 0; padding: 0; }
 .badge-card p { font-size: 0.86rem; margin: 0; color: var(--dc-ink-soft); }
 
 section { padding: 90px 0; }
-@media (max-width: 767px) { section { padding: 6px 0; } }
+@media (max-width: 767px) { section { padding: 3px 0; } }
 section.alt { background: var(--dc-paper-soft); }
 .section-title { max-width: 62ch; margin-bottom: 40px; }
 .section-title.center { margin-left: auto; margin-right: auto; text-align: center; }
@@ -412,3 +412,8 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: 0.8rem; }
 
 .two-col { display: grid; gap: 32px; align-items: center; }
+
+@media (max-width: 767px) {
+  #checklist { padding-bottom: 40px; }
+  #faq { padding-top: 40px; padding-bottom: 40px; }
+}
