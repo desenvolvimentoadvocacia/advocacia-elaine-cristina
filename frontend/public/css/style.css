@@ -141,6 +141,11 @@ ul { margin: 0; padding: 0; }
 .hero-arrow { position: absolute; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); color: #fff; display: flex; align-items: center; justify-content: center; }
 .hero-arrow.left { left: 24px; }
 .hero-arrow.right { left: calc(50% - 22px); }
+@media (max-width: 899px) {
+  .hero-photo { order: -1; min-height: 260px; }
+  .hero-copy { padding: 40px 24px; }
+  .hero-copy .btn-row { justify-content: center; }
+}
 
 /* Badges */
 .badges-row { position: relative; z-index: 5; margin-top: -64px; margin-bottom: 60px; }
