@@ -426,4 +426,9 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
   #por-que-advogado { padding-top: 20px; padding-bottom: 20px; }
   #por-que-advogado + section { padding-top: 20px; padding-bottom: 20px; }
   #por-que-advogado + section + section { padding-top: 20px; }
+  .testimonial-card { padding: 22px; }
+  .testimonial-photo { width: 42px; height: 42px; font-size: 0.84rem !important; margin-bottom: 10px; }
+  .testimonial-card p { font-size: 0.55rem; }
+  .testimonial-card h4 { font-size: 0.57rem; }
+  .testimonial-card span { font-size: 0.47rem; }
 }
