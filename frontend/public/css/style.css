@@ -77,6 +77,12 @@ ul { margin: 0; padding: 0; }
 .topbar .topbar-links { display: flex; gap: 24px; align-items: center; }
 .topbar .topbar-whatsapp { color: var(--dc-gold); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
 .topbar .topbar-whatsapp:hover { color: #fff; }
+@media (max-width: 599px) {
+  /* Mobile: so o CTA de pre-analise fica visivel no topo. WhatsApp continua
+     disponivel na tela de resultado do simulador, ja com o lead qualificado.
+     Telefone continua clicavel (tel:) pra quem quiser ligar direto. */
+  .topbar .topbar-whatsapp { display: none; }
+}
 
 /* Header */
 .site-header { background: #fff; padding: 18px 0; border-bottom: 1px solid var(--dc-border); position: relative; z-index: 30; }
