@@ -121,7 +121,7 @@ ul { margin: 0; padding: 0; }
   .site-header .container { justify-content: space-between; }
 }
 @media (max-width: 767px) {
-  section { padding: 24px 0; }
+  section { padding: 12px 0; }
   .site-header { padding: 8px 0; }
   .site-header .container { gap: 0 12px; flex-wrap: nowrap; }
   .site-header .brand-logo img { height: 44px; }
