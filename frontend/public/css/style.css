@@ -420,7 +420,7 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
   #checklist { padding-top: 5px; padding-bottom: 56px; }
   #faq { padding-top: 56px; padding-bottom: 56px; }
   .badges-row { margin-top: 0; margin-bottom: 30px; }
-  #sobre { padding-bottom: 10px; }
-  #o-que-e { padding-top: 10px; padding-bottom: 5px; }
+  #sobre { padding-bottom: 20px; }
+  #o-que-e { padding-top: 20px; padding-bottom: 5px; }
   #documentos { padding-top: 24px; }
 }
