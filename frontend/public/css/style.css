@@ -425,6 +425,8 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
   #sobre .btn { padding-top: 12px; padding-bottom: 12px; }
   #o-que-e { padding-top: 30px; padding-bottom: 20px; }
   #documentos { padding-top: 24px; padding-bottom: 20px; }
+  .trust-grid { gap: 32px; }
+  .trust-strip { padding: 32px 0; }
   #por-que-advogado { padding-top: 20px; padding-bottom: 20px; }
   #por-que-advogado + section { padding-top: 20px; padding-bottom: 20px; }
   #por-que-advogado + section + section { padding-top: 20px; }
