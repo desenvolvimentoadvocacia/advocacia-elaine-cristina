@@ -444,4 +444,5 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
   .hero p.lead { font-size: 0.82rem; }
   .hero .btn { padding: 13px 30px; font-size: 0.70rem; }
   .cta-banner .btn { padding: 17px 39px; font-size: 0.92rem; }
+  #wzNext { padding-left: 31px; padding-right: 31px; white-space: nowrap; }
 }
