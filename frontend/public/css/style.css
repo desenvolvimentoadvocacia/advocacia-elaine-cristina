@@ -121,12 +121,13 @@ ul { margin: 0; padding: 0; }
   .site-header .container { justify-content: space-between; }
 }
 @media (max-width: 767px) {
-  section { padding: 45px 0; }
+  section { padding: 34px 0; }
   .site-header { padding: 8px 0; }
   .site-header .container { gap: 0 12px; flex-wrap: nowrap; }
   .site-header .brand-logo img { height: 44px; }
   .header-right { margin-left: auto; flex-shrink: 0; }
   .site-header .btn { padding: 9px 18px; font-size: 0.58rem; }
+  .floating-card-photo { aspect-ratio: 3/4; min-height: unset; background-position: center top; }
 }
 /* Hero */
 .hero { background: var(--dc-navy); color: #fff; position: relative; overflow: hidden; }
