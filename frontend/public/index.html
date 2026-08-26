@@ -513,9 +513,27 @@
 
   var attribution = captureAttribution();
 
+  // Mapeia eventos de negócio para as ações de conversão criadas no Google Ads
+  // (Objetivos > Conversões, conta 695-119-6082)
+  var GOOGLE_ADS_CONVERSION_LABELS = {
+    'lead_form': 'AW-18409839674/xXJzCInLqugcELq4v8pE',
+    'click_whatsapp': 'AW-18409839674/J_ikCIzLqugcELq4v8pE',
+    'lead_result_whatsapp': 'AW-18409839674/8eDnCI_LqugcELq4v8pE',
+    'click_phone': 'AW-18409839674/etmlCIrMqugcELq4v8pE',
+    'lead_result_phone': 'AW-18409839674/etmlCIrMqugcELq4v8pE'
+  };
+
   function trackEvent(name, detail) {
     if (typeof window.gtag === 'function') {
       window.gtag('event', name, detail || {});
+      var conversionLabel = GOOGLE_ADS_CONVERSION_LABELS[name];
+      if (conversionLabel) {
+        window.gtag('event', 'conversion', {
+          'send_to': conversionLabel,
+          'value': 1.0,
+          'currency': 'BRL'
+        });
+      }
     }
     fetch(API_BASE + '/api/eventos', {
       method: 'POST',
