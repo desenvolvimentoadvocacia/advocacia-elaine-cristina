@@ -32,6 +32,13 @@ router.post('/', async (req, res) => {
     });
   }
 
+  if (body.consentimento_lgpd !== true) {
+    return res.status(400).json({
+      error: 'consentimento_obrigatorio',
+      detalhe: 'É necessário aceitar a Política de Privacidade para enviar o formulário',
+    });
+  }
+
   const filhos = FILHOS_VALIDOS.includes(body.filhos) ? body.filhos : null;
   const bens = BENS_VALIDOS.includes(body.bens) ? body.bens : null;
   const acordo_bens = ACORDO_BENS_VALIDOS.includes(body.acordo_bens) ? body.acordo_bens : null;
@@ -57,14 +64,16 @@ router.post('/', async (req, res) => {
         gclid, utm_source, utm_medium, utm_campaign, utm_term, utm_content, landing_page,
         nome, whatsapp, email, cidade,
         situacao_casal, filhos, bens, acordo_bens,
-        tipo_caso, lead_score, lead_classificacao, canal_preferido
-      ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19)
+        tipo_caso, lead_score, lead_classificacao, canal_preferido,
+        consentimento_lgpd, consentimento_em
+      ) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20,now())
       RETURNING id, created_at`,
       [
         gclid, utm_source, utm_medium, utm_campaign, utm_term, utm_content, landing_page,
         nome, whatsapp, email, cidade,
         situacao_casal, filhos, bens, acordo_bens,
         tipo_caso, lead_score, lead_classificacao, canal_preferido,
+        true,
       ]
     );
 

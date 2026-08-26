@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260825-48">
+<link rel="stylesheet" href="css/style.css?v=20260826-1">
 
 <!-- GA4 + Google Ads -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3LQWKST17H"></script>
@@ -255,7 +255,13 @@
             <label class="wizard-label" for="wzEmail">E-mail</label>
             <input type="email" id="wzEmail" placeholder="seu@email.com" style="width:100%;margin-bottom:14px;padding:17px 21px;border:1px solid var(--dc-border);border-radius:4px;font-family:inherit;font-size:1.2rem;background:var(--dc-paper-soft)">
             <label class="wizard-label" for="wzCidade">Cidade</label>
-            <input type="text" id="wzCidade" placeholder="Sua cidade" style="width:100%;padding:17px 21px;border:1px solid var(--dc-border);border-radius:4px;font-family:inherit;font-size:1.2rem;background:var(--dc-paper-soft)">
+            <input type="text" id="wzCidade" placeholder="Sua cidade" style="width:100%;margin-bottom:18px;padding:17px 21px;border:1px solid var(--dc-border);border-radius:4px;font-family:inherit;font-size:1.2rem;background:var(--dc-paper-soft)">
+
+            <label class="wizard-consent">
+              <input type="checkbox" id="wzConsentimento">
+              <span>Li e concordo com a <a href="/privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o uso dos meus dados para que a Elaine Cristina Advocacia entre em contato sobre a minha pré-análise.</span>
+            </label>
+            <p class="wizard-consent-error" id="wzConsentimentoError">Marque a caixa acima para poder continuar.</p>
           </div>
 
           <div class="wizard-panel" data-panel="result" id="wizardResult"></div>
@@ -465,7 +471,7 @@
       <div>
         <h4>Navegação</h4>
         <a href="#sobre">Sobre</a>
-        <a href="#contato">Pré-análise gratuita</a>
+        <a href="#simulador">Pré-análise gratuita</a>
         <a href="#blog">Conteúdo</a>
       </div>
       <div>
@@ -478,7 +484,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Elaine Cristina Advocacia. Todos os direitos reservados.</span>
-      <span style="color:var(--dc-gold)">Política de Privacidade</span>
+      <a href="/privacidade.html" style="color:var(--dc-gold)">Política de Privacidade</a>
     </div>
     <p style="opacity:0.6;font-size:0.76rem;margin-top:16px">Publicidade em conformidade com o Provimento nº 205/2021 da OAB. Este site não constitui consulta jurídica; a análise apresentada é inicial e orientativa.</p>
   </div>
@@ -635,6 +641,11 @@
       document.getElementById(fieldValue('wzNome') ? 'wzWhats' : 'wzNome').focus();
       return false;
     }
+    if (step === 3) {
+      var consentimentoOk = document.getElementById('wzConsentimento').checked;
+      document.getElementById('wzConsentimentoError').style.display = consentimentoOk ? 'none' : 'block';
+      if (!consentimentoOk) return false;
+    }
     return true;
   }
 
@@ -684,6 +695,7 @@
       bens: radioValue('bens'),
       acordo_bens: radioValue('bens') === 'sim' ? radioValue('acordo_bens') : undefined,
       canal_preferido: 'whatsapp',
+      consentimento_lgpd: true,
       gclid: attribution.gclid,
       utm_source: attribution.utm_source,
       utm_medium: attribution.utm_medium,

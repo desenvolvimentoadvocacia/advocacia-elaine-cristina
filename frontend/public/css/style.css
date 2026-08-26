@@ -302,6 +302,11 @@ section.alt { background: var(--dc-paper-soft); }
 .wizard-summary dt:first-child { margin-top: 0; }
 .wizard-summary dd { margin: 2px 0 0 0; color: var(--dc-ink-soft); }
 
+.wizard-consent { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 0.82rem; color: var(--dc-ink-soft); line-height: 1.5; }
+.wizard-consent input { accent-color: var(--dc-navy); width: 17px; height: 17px; flex-shrink: 0; margin-top: 2px; }
+.wizard-consent a { text-decoration: underline; }
+.wizard-consent-error { display: none; color: #b3261e; font-size: 0.8rem; margin: 8px 0 0; }
+
 .wizard-result-badge { font-size: 1.1rem; font-weight: 600; color: var(--dc-navy); margin-bottom: 12px; }
 .wizard-result-text { font-size: 0.92rem; color: var(--dc-ink-soft); margin-bottom: 22px; }
 

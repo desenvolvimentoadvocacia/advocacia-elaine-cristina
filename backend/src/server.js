@@ -1,5 +1,7 @@
 'use strict';
 
+const fs = require('fs');
+const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const { pool } = require('./db');
@@ -7,6 +9,16 @@ const leadsRouter = require('./routes/leads');
 const eventosRouter = require('./routes/eventos');
 
 const app = express();
+
+async function runMigrations() {
+  const migrationsDir = path.join(__dirname, '..', 'migrations');
+  const files = fs.readdirSync(migrationsDir).filter((f) => f.endsWith('.sql')).sort();
+  for (const file of files) {
+    const sql = fs.readFileSync(path.join(migrationsDir, file), 'utf8');
+    console.log(`[migrate] aplicando ${file}...`);
+    await pool.query(sql);
+  }
+}
 
 const allowedOrigins = (process.env.CORS_ORIGIN || '*')
   .split(',')
@@ -40,6 +52,13 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`[server] API de leads — Elaine Cristina Advocacia rodando na porta ${PORT}`);
-});
+runMigrations()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`[server] API de leads — Elaine Cristina Advocacia rodando na porta ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error('[migrate] falhou, servidor não subiu', err);
+    process.exit(1);
+  });
