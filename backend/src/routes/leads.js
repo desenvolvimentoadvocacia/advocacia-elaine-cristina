@@ -4,6 +4,7 @@ const express = require('express');
 const { pool } = require('../db');
 const { classifyLead } = require('../scoring');
 const { notifyNewLead } = require('../email');
+const { uploadOfflineConversion } = require('../googleads');
 
 const router = express.Router();
 
@@ -87,10 +88,52 @@ router.post('/', async (req, res) => {
     return res.status(201).json({
       ok: true,
       id: lead.id,
-      resultado_lp, // A | B | C | D — front usa isso pra mostrar o bloco de resultado certo
+      resultado_lp,
     });
   } catch (err) {
     console.error('[leads] erro ao salvar lead', err);
+    return res.status(500).json({ error: 'erro_interno' });
+  }
+});
+
+router.patch('/:id', async (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  if (!id || isNaN(id)) return res.status(400).json({ error: 'id_invalido' });
+
+  const STATUS_VALIDOS = ['novo', 'qualificado', 'consulta_agendada', 'cliente_fechado', 'fora_de_escopo'];
+  const { status } = req.body || {};
+
+  if (!STATUS_VALIDOS.includes(status)) {
+    return res.status(400).json({ error: 'status_invalido' });
+  }
+
+  try {
+    let result;
+    if (status === 'cliente_fechado') {
+      result = await pool.query(
+        `UPDATE leads SET status = $1, converted_at = now() WHERE id = $2 RETURNING id, status, gclid, converted_at`,
+        [status, id]
+      );
+    } else {
+      result = await pool.query(
+        `UPDATE leads SET status = $1 WHERE id = $2 RETURNING id, status, gclid, converted_at`,
+        [status, id]
+      );
+    }
+
+    if (result.rows.length === 0) return res.status(404).json({ error: 'lead_nao_encontrado' });
+
+    const lead = result.rows[0];
+
+    if (status === 'cliente_fechado' && lead.gclid) {
+      uploadOfflineConversion(lead.gclid, lead.converted_at).catch((err) => {
+        console.error('[leads] falha ao enviar conversao offline', err);
+      });
+    }
+
+    return res.json({ ok: true, lead });
+  } catch (err) {
+    console.error('[leads] erro ao atualizar status', err);
     return res.status(500).json({ error: 'erro_interno' });
   }
 });
