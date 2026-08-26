@@ -680,18 +680,26 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     })
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        var letra = data.resultado_lp || localFallbackClassificacao();
-        trackEvent('lead_form', { lead_id: data.id, resultado: letra });
-        current = 'result';
-        renderResult(letra, data.id);
+      .then(function (r) { return r.json().then(function (data) { return { httpOk: r.ok, data: data }; }); })
+      .then(function (res) {
+        var data = res.data;
+        var letra = (data && data.resultado_lp) || localFallbackClassificacao();
+        if (res.httpOk && data && data.ok) {
+          // Só conta como conversão quando o lead foi salvo de verdade no backend
+          trackEvent('lead_form', { lead_id: data.id, resultado: letra });
+          current = 'result';
+          renderResult(letra, data.id);
+        } else {
+          console.error('[simulador] backend recusou o lead', data);
+          current = 'result';
+          renderResult(letra, null);
+        }
         render();
       })
       .catch(function (err) {
+        // Falha de rede/fetch — não é uma conversão, não deve contar como lead_form
         console.error('[simulador] falha ao enviar lead', err);
         var letra = localFallbackClassificacao();
-        trackEvent('lead_form', { lead_id: null, resultado: letra, erro: true });
         current = 'result';
         renderResult(letra, null);
         render();
