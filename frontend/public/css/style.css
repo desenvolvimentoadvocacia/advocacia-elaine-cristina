@@ -432,18 +432,26 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
   #sobre { padding-bottom: 30px; }
   #sobre .btn-row { justify-content: flex-end; }
   #sobre .btn { padding-top: 12px; padding-bottom: 12px; }
-  #o-que-e { padding-top: 30px; padding-bottom: 20px; }
-  #documentos { padding-top: 24px; padding-bottom: 20px; }
-  .trust-grid { gap: 32px; }
-  .trust-strip { padding: 32px 0; }
-  #por-que-advogado { padding-top: 20px; padding-bottom: 20px; }
-  #por-que-advogado + section { padding-top: 20px; padding-bottom: 40px; }
-  #por-que-advogado + section + section { padding-top: 20px; padding-bottom: 40px; }
-  #por-que-advogado + section + section + section { padding-top: 40px; }
+  #o-que-e { padding-top: 24px; padding-bottom: 16px; }
+  .o-que-e-grid { gap: 24px; }
+  .o-que-e-box { padding: 24px; }
+  #documentos { padding-top: 20px; padding-bottom: 16px; }
+  .documentos-grid { gap: 24px; }
+  .about-grid { gap: 26px; }
+  .about-photo { min-height: 240px; }
+  .badge-card { padding: 20px 22px; }
+  .checklist-items li { padding: 11px 16px; }
+  .checklist-items { gap: 10px; }
+  .trust-strip { display: none; }
+  .cta-banner { padding: 40px 22px; }
+  .quote-block { padding: 16px 0; }
   .quote-block .mark { font-size: 2.25rem; }
   .quote-block .mark-close { margin-top: 10px; display: block; }
   .quote-block p { font-size: 1.056rem; }
-  #blog { padding-top: 40px; }
+  .section-title { margin-bottom: 24px; }
+  footer.site-footer { padding-top: 36px; }
+  .footer-grid { gap: 24px; margin-bottom: 28px; }
+  #blog { padding-top: 32px; padding-bottom: 8px; }
   .testimonial-card { padding: 30px; }
   .testimonial-photo { width: 58px; height: 58px; font-size: 1.15rem !important; margin-bottom: 14px; }
   .testimonial-card p { font-size: 0.76rem; }
@@ -460,3 +468,23 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
 .contato-rapido { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 16px; }
 .contato-rapido .btn { flex: 1 1 220px; justify-content: center; }
 .contato-rapido-obs { font-size: 0.82rem; color: var(--dc-ink-soft); margin: 0; }
+
+/* ── Versão compacta (Preview 2) ── */
+.leia-tambem { list-style: none; margin: 0 auto; padding: 0; max-width: 620px; display: grid; gap: 2px; background: var(--dc-border); border: 1px solid var(--dc-border); }
+.leia-tambem li { background: #fff; }
+.leia-tambem a { display: block; padding: 16px 20px; color: var(--dc-navy); font-family: var(--font-head); font-weight: 600; font-size: 0.98rem; }
+.leia-tambem a::after { content: " →"; color: var(--dc-gold); }
+.leia-tambem a:hover { background: var(--dc-paper-soft); }
+
+.mobile-cta-bar { display: none; }
+@media (max-width: 767px) {
+  .mobile-cta-bar {
+    display: flex; gap: 8px;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.97); border-top: 1px solid var(--dc-border);
+    box-shadow: 0 -6px 18px rgba(20, 24, 40, 0.08);
+  }
+  .mobile-cta-bar .btn { flex: 1; justify-content: center; padding: 13px 10px; font-size: 0.72rem; }
+  body { padding-bottom: 66px; }
+}
