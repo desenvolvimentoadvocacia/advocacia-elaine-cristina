@@ -130,7 +130,7 @@ ul { margin: 0; padding: 0; }
   .site-header .brand-logo img { height: 44px; }
   .header-right { margin-left: auto; flex-shrink: 0; }
   .site-header .btn { padding: 9px 18px; font-size: 0.58rem; }
-  .floating-card-photo { aspect-ratio: 3/4; min-height: unset; background-position: center top; }
+  .floating-card-photo { aspect-ratio: 16/10; min-height: unset; background-position: center top; }
 }
 /* Hero */
 .hero { background: var(--dc-navy); color: #fff; position: relative; overflow: hidden; }
@@ -423,7 +423,11 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
 
 @media (max-width: 767px) {
   #checklist { padding-top: 20px; padding-bottom: 56px; }
-  #faq { padding-top: 56px; padding-bottom: 56px; }
+  #faq { padding-top: 40px; padding-bottom: 40px; }
+  #faq .faq-item { padding: 16px 18px; }
+  .timeline-section { padding: 36px 0 44px; }
+  .timeline-section .section-title { margin-bottom: 22px; }
+  .timeline-steps { gap: 18px; }
   .badges-row { margin-top: 0; margin-bottom: 30px; }
   #sobre { padding-bottom: 30px; }
   #sobre .btn-row { justify-content: flex-end; }
@@ -450,7 +454,6 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
   .hero p.lead { font-size: 0.82rem; }
   .hero .btn { padding: 13px 30px; font-size: 0.70rem; }
   .cta-banner .btn { padding: 15px 35px; font-size: 0.83rem; }
-  #wzNext { padding-left: 31px; padding-right: 31px; white-space: nowrap; }
 }
 
 /* ── Simplificação sem simulador (2026-08-27) ── */
