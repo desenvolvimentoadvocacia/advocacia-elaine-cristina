@@ -430,8 +430,11 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
   .timeline-steps { gap: 18px; }
   .badges-row { margin-top: 0; margin-bottom: 30px; }
   #sobre { padding-bottom: 30px; }
-  #sobre .btn-row { justify-content: flex-end; }
-  #sobre .btn { padding-top: 12px; padding-bottom: 12px; }
+  /* Botões de bloco no mobile: largura total, empilhados e centralizados
+     (header e hero ficam como estão). */
+  #sobre .btn-row, .cta-banner .btn-row { flex-direction: column; align-items: stretch; }
+  #sobre .btn-row .btn, .cta-banner .btn-row .btn { width: 100%; justify-content: center; }
+  #sobre .btn { padding-top: 13px; padding-bottom: 13px; }
   #o-que-e { padding-top: 30px; padding-bottom: 20px; }
   #documentos { padding-top: 24px; padding-bottom: 20px; }
   .trust-grid { gap: 32px; }
