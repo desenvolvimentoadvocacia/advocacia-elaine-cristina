@@ -425,9 +425,12 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
   #checklist { padding-top: 20px; padding-bottom: 56px; }
   #faq { padding-top: 40px; padding-bottom: 40px; }
   #faq .faq-item { padding: 16px 18px; }
-  .timeline-section { padding: 36px 0 44px; }
+  .timeline-section { padding: 36px 0 48px; }
   .timeline-section .section-title { margin-bottom: 22px; }
   .timeline-steps { gap: 18px; }
+  /* No mobile o card "Fale com o escritório" não sobe por cima da timeline
+     (o efeito de sobreposição é só do desktop e cortava o texto da etapa 04). */
+  .floating-card-wrap { margin-top: 8px; }
   .badges-row { margin-top: 0; margin-bottom: 30px; }
   #sobre { padding-bottom: 30px; }
   /* Botões de bloco no mobile: largura total, empilhados e centralizados
@@ -442,6 +445,12 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
   .documentos-grid { gap: 24px; }
   .about-grid { gap: 26px; }
   .about-photo { min-height: 240px; }
+  /* Selo OAB menor e mais no canto no mobile, para cobrir menos a foto. */
+  .about-badge-group { bottom: -20px; right: -12px; gap: 3px; }
+  .about-stat-badge { padding: 8px 14px; min-width: 0; }
+  .about-stat-badge strong { font-size: 0.98rem; }
+  .about-stat-badge span { font-size: 0.58rem; letter-spacing: 0.04em; }
+  .about-signature { font-size: 0.66rem; margin-top: 2px; }
   .badge-card { padding: 20px 22px; }
   .checklist-items li { padding: 11px 16px; }
   .checklist-items { gap: 10px; }
@@ -485,9 +494,10 @@ footer.site-footer { background: var(--dc-navy-deep); color: #a8afc0; padding: 7
     display: flex; gap: 8px;
     position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
     padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
-    background: rgba(255, 255, 255, 0.97); border-top: 1px solid var(--dc-border);
-    box-shadow: 0 -6px 18px rgba(20, 24, 40, 0.08);
+    background: #ffffff; border-top: 1px solid var(--dc-border);
+    box-shadow: 0 -6px 18px rgba(20, 24, 40, 0.12);
   }
   .mobile-cta-bar .btn { flex: 1; justify-content: center; padding: 13px 10px; font-size: 0.72rem; }
-  body { padding-bottom: 66px; }
+  /* Reserva de espaço para o conteúdo não ficar encoberto pela barra fixa. */
+  body { padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
 }
