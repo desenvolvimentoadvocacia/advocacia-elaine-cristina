@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Relatório Quinzenal — 12/09/2026 | Elaine Cristina Advocacia</title>
+<style>
+  :root {
+    --paper: #f2f4f9;
+    --paper-raised: #ffffff;
+    --ink: #0f1e33;
+    --ink-soft: #4c5872;
+    --ink-faint: #848da3;
+    --navy: #003375;
+    --navy-soft: #2f5a9c;
+    --gold: #93813f;
+    --gold-soft: #c2b87c;
+    --terracotta: #7c6c3f;
+    --line: #dbe1ec;
+    --line-strong: #c1cbdf;
+    --good: #2f7a4d;
+    --good-bg: #e3f1e7;
+    --warn: #8a6a12;
+    --warn-bg: #f5ecd2;
+    --critical: #9c3b28;
+    --critical-bg: #f5e2dd;
+    --chip-bg: #e7ebf3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0d1522;
+      --paper-raised: #141d2e;
+      --ink: #e8ecf3;
+      --ink-soft: #aab3c4;
+      --ink-faint: #737e93;
+      --navy: #7fa3d6;
+      --navy-soft: #a9c3e8;
+      --gold: #d9cf95;
+      --gold-soft: #cfc48a;
+      --terracotta: #b8a466;
+      --line: #263145;
+      --line-strong: #37445c;
+      --good: #86c19a;
+      --good-bg: #1c2c22;
+      --warn: #e0b466;
+      --warn-bg: #2c2515;
+      --critical: #e1917e;
+      --critical-bg: #2e1f1c;
+      --chip-bg: #1c2536;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0d1522;
+    --paper-raised: #141d2e;
+    --ink: #e8ecf3;
+    --ink-soft: #aab3c4;
+    --ink-faint: #737e93;
+    --navy: #7fa3d6;
+    --navy-soft: #a9c3e8;
+    --gold: #d9cf95;
+    --gold-soft: #cfc48a;
+    --terracotta: #b8a466;
+    --line: #263145;
+    --line-strong: #37445c;
+    --good: #86c19a;
+    --good-bg: #1c2c22;
+    --warn: #e0b466;
+    --warn-bg: #2c2515;
+    --critical: #e1917e;
+    --critical-bg: #2e1f1c;
+    --chip-bg: #1c2536;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { background: var(--paper); }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Public Sans", -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .sheet {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 56px 28px 80px;
+  }
+
+  h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; text-wrap: balance; color: var(--ink); margin: 0; }
+  .num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+
+  /* ---------- Header ---------- */
+  .masthead {
+    display: flex; flex-direction: column; gap: 18px;
+    padding-bottom: 28px; border-bottom: 3px double var(--line-strong);
+    margin-bottom: 40px;
+  }
+  .masthead-top {
+    display: flex; justify-content: space-between; align-items: flex-start; gap: 20px;
+  }
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-size: 11.5px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .masthead h1 { font-size: 34px; font-weight: 700; margin-top: 6px; }
+  .masthead .subtitle { color: var(--ink-soft); font-size: 15.5px; margin-top: 6px; max-width: 46ch; }
+  .masthead-meta {
+    text-align: right; font-size: 13px; color: var(--ink-soft); line-height: 1.7; white-space: nowrap;
+  }
+  .masthead-meta strong { color: var(--ink); font-weight: 600; }
+  .seal {
+    font-size: 30px; line-height: 1; flex-shrink: 0;
+  }
+
+  /* ---------- Sections ---------- */
+  section { margin-bottom: 52px; }
+  .section-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 20px; }
+  .section-head .eyebrow { white-space: nowrap; }
+  .section-head::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .section-head h2 { font-size: 22px; font-weight: 600; }
+  p.lede { color: var(--ink-soft); font-size: 15px; max-width: 68ch; margin: -8px 0 20px; }
+
+  /* ---------- Stat tiles ---------- */
+  .stat-row {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong);
+  }
+  .stat-tile {
+    padding: 20px 18px; border-left: 1px solid var(--line);
+  }
+  .stat-tile:first-child { border-left: none; }
+  .stat-tile .label { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+  .stat-tile .value { font-family: "Playfair Display", serif; font-size: 30px; font-weight: 700; margin-top: 6px; color: var(--navy); }
+  .stat-tile .delta { font-size: 12.5px; color: var(--ink-soft); margin-top: 4px; }
+  .stat-tile .delta.good { color: var(--good); }
+  .stat-tile .delta.warn { color: var(--warn); }
+
+  /* ---------- Timeline ---------- */
+  .timeline { position: relative; padding-left: 30px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1.5px; background: var(--line-strong);
+  }
+  .tl-item { position: relative; padding-bottom: 24px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -30px; top: 4px; width: 10px; height: 10px; border-radius: 50%;
+    background: var(--paper); border: 2px solid var(--navy);
+  }
+  .tl-date { font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--gold); font-weight: 600; }
+  .tl-title { font-weight: 600; margin-top: 2px; }
+  .tl-body { color: var(--ink-soft); font-size: 14px; margin-top: 3px; max-width: 62ch; }
+
+  /* ---------- Table ---------- */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+  th, td { padding: 10px 12px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  thead th {
+    font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--ink-faint); font-weight: 500; border-bottom: 1px solid var(--line-strong);
+  }
+  tbody td.name { font-weight: 600; }
+  tbody tr.total td { border-top: 1px solid var(--line-strong); border-bottom: none; font-weight: 700; padding-top: 12px; }
+  .status-pill {
+    display: inline-block; font-size: 11px; padding: 2px 9px; border-radius: 99px; font-weight: 600;
+  }
+  .status-pill.on { background: var(--good-bg); color: var(--good); }
+  .status-pill.off { background: var(--chip-bg); color: var(--ink-faint); }
+
+  /* ---------- Chart card ---------- */
+  .chart-card {
+    background: var(--paper-raised); border: 1px solid var(--line); border-radius: 6px; padding: 24px 24px 14px;
+  }
+  .chart-card h3 { font-size: 16.5px; font-weight: 600; margin-bottom: 2px; }
+  .chart-card .chart-note { font-size: 13px; color: var(--ink-soft); margin-bottom: 12px; }
+  svg text { font-family: "Public Sans", sans-serif; fill: var(--ink); }
+  svg text.mono { font-family: "IBM Plex Mono", monospace; }
+  svg text.soft { fill: var(--ink-soft); }
+  svg text.value { font-weight: 700; }
+
+  .meter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+  @media (max-width: 620px) { .meter-grid { grid-template-columns: 1fr; } }
+
+  /* ---------- Recommendations ---------- */
+  .reco-list { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--line); }
+  .reco-item { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .reco-num {
+    font-family: "Playfair Display", serif; font-weight: 700; font-size: 20px; color: var(--gold);
+    width: 28px; flex-shrink: 0;
+  }
+  .reco-item h4 { font-size: 15px; font-weight: 600; margin: 0 0 3px; }
+  .reco-item p { margin: 0; font-size: 13.5px; color: var(--ink-soft); max-width: 62ch; }
+  .reco-pri {
+    font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 3px; height: fit-content; margin-left: auto; white-space: nowrap;
+  }
+  .reco-pri.high { background: var(--critical-bg); color: var(--critical); }
+  .reco-pri.med { background: var(--warn-bg); color: var(--warn); }
+  .reco-pri.low { background: var(--chip-bg); color: var(--ink-soft); }
+
+  /* ---------- Footer ---------- */
+  footer {
+    border-top: 3px double var(--line-strong); padding-top: 22px; margin-top: 60px;
+    font-size: 12.5px; color: var(--ink-faint); display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;
+  }
+  footer a { color: var(--ink-soft); }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <div class="masthead-top">
+      <div>
+        <div class="eyebrow">Relatório quinzenal · Google Ads</div>
+        <h1>Elaine Cristina Advocacia</h1>
+        <div class="subtitle">Evolução completa da conta desde a criação — campanhas ativas e pausadas, sem recorte.</div>
+      </div>
+      <div class="seal">⚖️</div>
+    </div>
+    <div class="masthead-top" style="align-items: flex-end;">
+      <div class="masthead-meta">
+        Conta <strong class="num">695-119-6082</strong> · Período <strong>26 ago – 11 set 2026</strong><br>
+        Preparado por <strong>Consultoria Tráfego ADS</strong> · <strong>12 de setembro de 2026</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ RESUMO ============ -->
+  <section>
+    <div class="section-head"><span class="eyebrow">I. Resumo do período</span></div>
+    <div class="stat-row">
+      <div class="stat-tile">
+        <div class="label">Investido</div>
+        <div class="value num">R$ 723</div>
+        <div class="delta">18 dias corridos, 3 campanhas</div>
+      </div>
+      <div class="stat-tile">
+        <div class="label">Contatos gerados</div>
+        <div class="value num">28</div>
+        <div class="delta">WhatsApp + clique no telefone</div>
+      </div>
+      <div class="stat-tile">
+        <div class="label">Custo por clique</div>
+        <div class="value num">R$ 2,44</div>
+        <div class="delta good">64–84% abaixo da média do setor</div>
+      </div>
+      <div class="stat-tile">
+        <div class="label">Taxa de cliques (CTR)</div>
+        <div class="value num">7,9%</div>
+        <div class="delta good">Mais do que o dobro do mínimo saudável</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LINHA DO TEMPO ============ -->
+  <section>
+    <div class="section-head"><span class="eyebrow">II. Decisões de otimização no período</span></div>
+    <p class="lede">Cada ajuste abaixo é uma leitura de resultado real, conduzida dia a dia por quem cuida da conta — não uma configuração fixada de uma vez e esquecida.</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">26 ago</div>
+        <div class="tl-title">Campanha de Pesquisa estruturada</div>
+        <div class="tl-body">4 grupos de anúncios, 8 cidades (capital + zona leste + Grande SP), programação quarta–sexta 8h–19h, público 25+, orçamento inicial de R$ 100/dia em "Maximizar cliques".</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">02–04 set</div>
+        <div class="tl-title">Primeiros dias no ar</div>
+        <div class="tl-body">109 cliques, R$ 304 investidos, CPC médio R$ 2,79, ~5 contatos por WhatsApp.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">06 set</div>
+        <div class="tl-title">Recarga de saldo</div>
+        <div class="tl-body">Conta fica sem veiculação por cerca de 22 horas até a recarga seguinte — normalizado no dia seguinte.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">07 set</div>
+        <div class="tl-title">Primeiro ajuste de lances</div>
+        <div class="tl-body">Com base no desempenho dos primeiros dias, os lances de CPC máximo são elevados em vários grupos de anúncios para manter posição competitiva.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">09 set</div>
+        <div class="tl-title">Teste: Maximizar conversões</div>
+        <div class="tl-body">Estratégia de lance testada em "Maximizar conversões" para avaliar ganho de eficiência frente ao modelo por clique.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">09 set, 22h26</div>
+        <div class="tl-title">Teste: Performance Max ativado</div>
+        <div class="tl-body">Ativação controlada para medir o potencial de alcance cross-network (Display, YouTube, Gmail, Discover) em comparação com a Pesquisa.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">10–11 set</div>
+        <div class="tl-title">Orçamento redistribuído entre os dois canais</div>
+        <div class="tl-body">Ajuste de verba entre Search e PMax com base na leitura de custo por contato de cada um; segmentação geográfica do Search revisada.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">Após o teste</div>
+        <div class="tl-title">Lance revertido para Maximizar cliques</div>
+        <div class="tl-body">A leitura dos resultados do teste confirmou "Maximizar cliques" como o modelo mais indicado enquanto a conta ainda constrói volume de conversão — decisão já revertida com base nos próprios dados.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">12 set — hoje</div>
+        <div class="tl-title">Estado atual</div>
+        <div class="tl-body">Search e Performance Max ativos, em fase de teste comparativo; Branded pausada. 28 contatos acumulados desde o lançamento. A conversão de chamada do site por duração (≥ 30 segundos) entrou no ar hoje, substituindo a antiga contagem por clique no telefone.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CAMPANHAS ============ -->
+  <section>
+    <div class="section-head"><span class="eyebrow">III. Campanha por campanha</span></div>
+    <p class="lede">Todas as campanhas da conta, incluindo a que está pausada — nada fica de fora do retrato.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Campanha</th><th>Status</th><th>Orçamento/dia</th><th>Estratégia</th>
+            <th>Impr.</th><th>Cliques</th><th>CTR</th><th>CPC méd.</th><th>Investido</th><th>Contatos</th><th>Custo/contato</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="name">Branded</td>
+            <td><span class="status-pill off">Pausada</span></td>
+            <td class="num">R$ 15</td>
+            <td>CPC manual</td>
+            <td class="num">0</td><td class="num">0</td><td class="num">—</td><td class="num">—</td>
+            <td class="num">R$ 0</td><td class="num">0</td><td class="num">—</td>
+          </tr>
+          <tr>
+            <td class="name">Pesquisa — Divórcio Extrajudicial</td>
+            <td><span class="status-pill on">Ativa</span></td>
+            <td class="num">R$ 40</td>
+            <td>Maximizar conversões</td>
+            <td class="num">1.330</td><td class="num">173</td><td class="num">13,0%</td><td class="num">R$ 3,00</td>
+            <td class="num">R$ 518</td><td class="num">5</td><td class="num">R$ 103,68</td>
+          </tr>
+          <tr>
+            <td class="name">Performance Max</td>
+            <td><span class="status-pill on">Ativa</span></td>
+            <td class="num">R$ 50</td>
+            <td>Maximizar conversões</td>
+            <td class="num">2.420</td><td class="num">123</td><td class="num">5,1%</td><td class="num">R$ 1,66</td>
+            <td class="num">R$ 205</td><td class="num">23</td><td class="num">R$ 8,90</td>
+          </tr>
+          <tr class="total">
+            <td class="name">Total da conta</td>
+            <td></td>
+            <td class="num">R$ 105*</td>
+            <td></td>
+            <td class="num">3.750</td><td class="num">296</td><td class="num">7,9%</td><td class="num">R$ 2,44</td>
+            <td class="num">R$ 723</td><td class="num">28</td><td class="num">R$ 25,83</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12.5px;color:var(--ink-faint);margin-top:8px;">* Soma dos orçamentos diários configurados hoje; a Branded não gastou no período por estar pausada. Contatos = ação "Clique WhatsApp" (15) + "Clique no telefone" (13), medidos por clique — nenhum é uma ligação atendida ou mensagem respondida.</p>
+  </section>
+
+  <!-- ============ CUSTO POR CONTATO ============ -->
+  <section>
+    <div class="section-head"><span class="eyebrow">IV. O que cada canal está realmente entregando</span></div>
+    <p class="lede">A média da conta (R$ 25,83) mistura dois canais muito diferentes. Olhados separado, o quadro muda.</p>
+    <div class="chart-card">
+      <h3>Custo por contato, por canal</h3>
+      <div class="chart-note">Barras à escala · linha tracejada = referência de mercado para 1 lead de advocacia no Brasil</div>
+      <svg viewBox="0 0 640 190" width="100%" role="img" aria-label="Comparação de custo por contato entre Pesquisa, Performance Max e a média da conta, com referência de mercado em R$150">
+        <line x1="150" y1="14" x2="150" y2="168" stroke="var(--line-strong)" stroke-width="1"/>
+        <g class="soft">
+          <line x1="150" y1="168" x2="571.9" y2="168" stroke="var(--line)" stroke-width="1"/>
+          <text x="150" y="184" font-size="11" text-anchor="middle" class="soft mono">R$0</text>
+          <text x="290.6" y="184" font-size="11" text-anchor="middle" class="soft mono">R$50</text>
+          <text x="431.25" y="184" font-size="11" text-anchor="middle" class="soft mono">R$100</text>
+          <text x="571.9" y="184" font-size="11" text-anchor="middle" class="soft mono">R$150</text>
+        </g>
+        <text x="140" y="34" font-size="13" text-anchor="end" font-weight="600">Pesquisa</text>
+        <rect x="150" y="22" width="291.8" height="24" rx="3" fill="var(--navy)"/>
+        <text x="450" y="39" font-size="13.5" class="value">R$ 103,68</text>
+        <text x="140" y="84" font-size="13" text-anchor="end" font-weight="600">Performance Max</text>
+        <rect x="150" y="72" width="25.0" height="24" rx="3" fill="var(--terracotta)"/>
+        <text x="183" y="89" font-size="13.5" class="value">R$ 8,90</text>
+        <text x="140" y="134" font-size="13" text-anchor="end" font-weight="600">Média da conta</text>
+        <rect x="150" y="122" width="72.7" height="24" rx="3" fill="var(--gold)"/>
+        <text x="231" y="139" font-size="13.5" class="value">R$ 25,83</text>
+        <line x1="571.9" y1="10" x2="571.9" y2="168" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="571.9" y="10" font-size="10.5" text-anchor="end" class="soft">a partir de R$150/lead</text>
+        <text x="571.9" y="21" font-size="10.5" text-anchor="end" class="soft">(mercado, advocacia)</text>
+      </svg>
+      <p style="font-size:13px;color:var(--ink-soft);margin:6px 0 0;">O custo por contato da Pesquisa (R$ 103,68) já é próximo do padrão de mercado para um lead jurídico. O do Performance Max (R$ 8,90) reflete o alcance mais amplo do canal (Display, YouTube, Gmail, Discover) — para saber se esse contato mais barato conversa tanto quanto o da Pesquisa, é preciso um sinal além do clique. A seção VI explica por quê.</p>
+    </div>
+  </section>
+
+  <!-- ============ BENCHMARKS ============ -->
+  <section>
+    <div class="section-head"><span class="eyebrow">V. Comparado ao mercado</span></div>
+    <p class="lede">Onde a conta está em relação ao que se pratica em Google Ads para advocacia no Brasil.</p>
+    <div class="meter-grid">
+      <div class="chart-card">
+        <h3>Taxa de cliques (CTR)</h3>
+        <div class="chart-note">Recomendação de mercado: manter acima de 3%</div>
+        <svg viewBox="0 0 480 68" width="100%" role="img" aria-label="CTR da conta 7,9%, acima do mínimo recomendado de 3%">
+          <line x1="60" y1="52" x2="440" y2="52" stroke="var(--line)" stroke-width="1"/>
+          <rect x="60" y="18" width="199.8" height="22" rx="3" fill="var(--good)"/>
+          <line x1="136" y1="12" x2="136" y2="52" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <text x="136" y="64" font-size="10.5" text-anchor="middle" class="soft">mín. 3%</text>
+          <text x="266" y="34" font-size="14" class="value">7,9%</text>
+          <text x="60" y="64" font-size="10.5" class="soft">0%</text>
+          <text x="440" y="64" font-size="10.5" text-anchor="end" class="soft">15%</text>
+        </svg>
+      </div>
+      <div class="chart-card">
+        <h3>Custo por clique (CPC)</h3>
+        <div class="chart-note">Média de mercado para advocacia: ~R$ 15 (faixa R$ 12–25)</div>
+        <svg viewBox="0 0 480 68" width="100%" role="img" aria-label="CPC da conta R$2,44, bem abaixo da média de mercado de R$15">
+          <line x1="60" y1="52" x2="440" y2="52" stroke="var(--line)" stroke-width="1"/>
+          <rect x="60" y="18" width="46.4" height="22" rx="3" fill="var(--good)"/>
+          <line x1="345" y1="12" x2="345" y2="52" stroke="var(--ink-soft)" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <text x="345" y="64" font-size="10.5" text-anchor="middle" class="soft">média R$15</text>
+          <text x="114" y="34" font-size="14" class="value">R$ 2,44</text>
+          <text x="60" y="64" font-size="10.5" class="soft">R$0</text>
+          <text x="440" y="64" font-size="10.5" text-anchor="end" class="soft">R$20</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SINAL DE QUALIDADE ============ -->
+  <section>
+    <div class="section-head"><span class="eyebrow">VI. O sinal que falta hoje</span></div>
+    <p class="lede">Até 11/09, a única conversão que guiava os lances era um clique — não uma conversa. Isso explica boa parte do que os números acima não respondem sozinhos.</p>
+    <div class="chart-card">
+      <h3>Por que o clique sozinho não basta</h3>
+      <p style="font-size:14.5px;color:var(--ink);margin:0 0 12px;">Quanto mais a plataforma otimiza — Maximizar conversões, Performance Max, segmentação por inteligência artificial — mais ela persegue exatamente o alvo configurado. Enquanto esse alvo era só "gerar clique no WhatsApp", a IA do Google encontrava esse clique onde fosse mais barato, inclusive em públicos mais amplos como os do Performance Max, sem necessariamente diferenciar quem está pronto para uma consulta de quem só está curioso. Quanto mais refinada a segmentação manual, mais a camada de IA da própria plataforma a flexibiliza em busca do alvo configurado — por isso o tipo de conversão medida importa tanto quanto a segmentação.</p>
+      <p style="font-size:14.5px;color:var(--ink);margin:0;">Isso não era uma falha de configuração: era consequência direta de medir só o clique. O plano técnico original desta conta previa sinais mais ricos que o clique — retirados em 27/08 a pedido da própria Dra. Elaine, por preocupação com coleta de dados (LGPD). Em 12/09, o primeiro desses sinais voltou ao ar: uma chamada real de pelo menos 30 segundos, sem coletar nenhum dado da pessoa que liga — compatível com essa preferência.</p>
+    </div>
+    <div class="table-wrap" style="margin-top:20px;">
+      <table>
+        <thead>
+          <tr><th>Sinal</th><th>Acompanhamos hoje?</th><th>O que mede</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="name">Clique WhatsApp</td><td><span class="status-pill on">Sim — Principal</span></td><td style="text-align:left;">Alguém tocou no botão do WhatsApp</td></tr>
+          <tr><td class="name">Chamada do site (≥ 30 segundos)</td><td><span class="status-pill on">Sim — Principal, desde 12/09</span></td><td style="text-align:left;">Ligação real, sustentada por meio minuto — sem coletar nenhum dado da pessoa</td></tr>
+          <tr><td class="name">WhatsApp qualificado</td><td><span class="status-pill off">Retirado em 27/08</span></td><td style="text-align:left;">Resposta positiva na conversa, não só o clique inicial</td></tr>
+          <tr><td class="name">Formulário enviado</td><td><span class="status-pill off">Retirado em 27/08</span></td><td style="text-align:left;">Dados do caso preenchidos antes do contato</td></tr>
+          <tr><td class="name">Cliente fechado</td><td><span class="status-pill off">Retirado em 27/08</span></td><td style="text-align:left;">Contato que virou cliente de fato</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ RECOMENDAÇÕES ============ -->
+  <section>
+    <div class="section-head"><span class="eyebrow">VII. Próximos passos</span></div>
+    <div class="reco-list">
+      <div class="reco-item">
+        <div class="reco-num">1</div>
+        <div style="flex:1;">
+          <h4>Apresentação de Relatório para a Dra. Elaine</h4>
+          <p>Com duas semanas de simplificação já rodando, dá para mostrar com números o que se ganha em privacidade e o que se perde em precisão de leitura — e decidir junto qual sinal ela topa reativar.</p>
+        </div>
+        <div class="reco-pri high">Alta</div>
+      </div>
+      <div class="reco-item">
+        <div class="reco-num">2</div>
+        <div style="flex:1;">
+          <h4>Manter o teste Search × Performance Max rodando mais um ciclo</h4>
+          <p>Os dois canais ainda estão em fase de aprendizado; decisão de manter, redistribuir ou pausar qualquer um deles fica mais segura com mais dados.</p>
+        </div>
+        <div class="reco-pri med">Média</div>
+      </div>
+      <div class="reco-item">
+        <div class="reco-num">3</div>
+        <div style="flex:1;">
+          <h4>Registro manual simples de atendimento real</h4>
+          <p>Enquanto o volume de chamadas por duração ainda é baixo, uma planilha ou nota no WhatsApp Business de quantos contatos viraram conversa de verdade já ajuda a calibrar a leitura.</p>
+        </div>
+        <div class="reco-pri low">Em andamento</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>Dados extraídos do painel do Google Ads (conta 695-119-6082) em 12/09/2026. Referências de mercado: pesquisa setorial sobre CPC, CTR e custo por lead em Google Ads para advocacia no Brasil.</div>
+    <div>Relatório Quinzenal Advocacia Elaine Cristina · Consultoria Tráfego ADS</div>
+  </footer>
+
+</div>
+</body>
+</html>
