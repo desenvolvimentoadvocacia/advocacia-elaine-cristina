@@ -18,6 +18,9 @@
   gtag('js', new Date());
   gtag('config', 'G-3LQWKST17H');
   gtag('config', 'AW-18409839674');
+  gtag('config', 'AW-18409839674/QO4XCIu0p_UcELq4v8pE', {
+    'phone_conversion_number': '(11) 98313-4086'
+  });
 </script>
 </head>
 <body>
@@ -398,10 +401,11 @@
 
   // Mapeia os eventos de contato para as ações de conversão do Google Ads
   // (Objetivos > Conversões, conta 695-119-6082). Sem formulário, a conversão
-  // passa a ser o clique no WhatsApp / telefone.
+  // do WhatsApp é o clique; a de telefone é medida pelo próprio Google via
+  // encaminhamento de chamadas (gtag config phone_conversion_number acima),
+  // não por clique — evita contar curiosos que só tocam no número.
   var GOOGLE_ADS_CONVERSION_LABELS = {
-    'click_whatsapp': 'AW-18409839674/J_ikCIzLqugcELq4v8pE',
-    'click_phone': 'AW-18409839674/etmlCIrMqugcELq4v8pE'
+    'click_whatsapp': 'AW-18409839674/J_ikCIzLqugcELq4v8pE'
   };
 
   function trackEvent(name, detail) {
@@ -436,13 +440,6 @@
       trackEvent('click_whatsapp', { source: (section && section.id) || 'generic' });
     });
   });
-  document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
-    el.addEventListener('click', function () {
-      var section = el.closest('section, header, footer, div[id]');
-      trackEvent('click_phone', { source: (section && section.id) || 'generic' });
-    });
-  });
-
   trackEvent('page_view');
 })();
 </script>
